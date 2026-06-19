@@ -1,0 +1,82 @@
+---
+interface Props {
+  currentPage?: string;
+}
+const { currentPage = 'home' } = Astro.props;
+const links = [
+  { label: 'About', href: '/about/', key: 'about' },
+  { label: 'Experience', href: '/experience/', key: 'experience' },
+  { label: 'Services', href: '/services/', key: 'services' },
+  { label: 'Contact', href: '/contact/', key: 'contact' },
+];
+---
+<nav class="sticky top-0 z-50 border-b border-border bg-white/[0.92] backdrop-blur-[8px] backdrop-saturate-[1.8]">
+  <div class="mx-auto flex h-[72px] max-w-[960px] w-full items-center justify-between px-[clamp(20px,5vw,40px)]">
+    <a href="/" class="font-sans text-base font-semibold tracking-[0.01em] text-ink no-underline">
+      David Recalde<span class="text-accent">·</span>
+    </a>
+    <div class="hidden md:flex items-center gap-[34px]">
+      {links.map(link => (
+        <a
+          href={link.href}
+          class:list={[
+            'font-sans text-[13px] tracking-[0.12em] uppercase font-medium no-underline transition-colors duration-200 whitespace-nowrap',
+            currentPage === link.key ? 'text-ink' : 'text-muted hover:text-ink',
+          ]}
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+    <button
+      id="menu-toggle"
+      class="flex md:hidden flex-col gap-[5px] border-none bg-transparent cursor-pointer p-[10px_4px]"
+      aria-label="Open menu"
+    >
+      <span class="block w-[22px] h-[1.5px] bg-ink"></span>
+      <span class="block w-[22px] h-[1.5px] bg-ink"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu overlay -->
+<div id="mobile-menu" class="fixed inset-0 z-[100] flex flex-col bg-white hidden">
+  <div class="flex h-[72px] items-center justify-between border-b border-border px-[clamp(20px,5vw,40px)]">
+    <a href="/" class="font-sans text-base font-semibold text-ink no-underline">
+      David Recalde<span class="text-accent">·</span>
+    </a>
+    <button
+      id="menu-close"
+      class="border-none bg-transparent cursor-pointer text-[30px] leading-none text-ink font-light px-1"
+      aria-label="Close menu"
+    >&times;</button>
+  </div>
+  <div class="flex flex-1 flex-col justify-center gap-1.5 px-[clamp(28px,8vw,40px)]">
+    {links.map(link => (
+      <a href={link.href} class="font-display text-[42px] font-medium text-ink no-underline leading-[1.2]">
+        {link.label}
+      </a>
+    ))}
+    <a
+      href="/contact/"
+      class="mt-7 inline-flex w-fit items-center gap-2 rounded bg-accent px-6 py-3.5 font-sans text-[15px] font-medium text-white no-underline"
+    >Get in touch&nbsp;&rarr;</a>
+  </div>
+</div>
+
+<script>
+  document.getElementById('menu-toggle')?.addEventListener('click', () => {
+    document.getElementById('mobile-menu')?.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  });
+  document.getElementById('menu-close')?.addEventListener('click', () => {
+    document.getElementById('mobile-menu')?.classList.add('hidden');
+    document.body.style.overflow = '';
+  });
+  document.querySelectorAll('#mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('mobile-menu')?.classList.add('hidden');
+      document.body.style.overflow = '';
+    });
+  });
+</script>
