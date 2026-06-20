@@ -4,8 +4,8 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 ---
 <BaseLayout
-  title="David Recalde — Designer & Communication Consultant, Tokyo"
-  description="Designer and communication consultant based in Tokyo. Founder of NODA.Tokyo and supein.club. Spain–Japan digital communication, branding and SEO."
+  title="David Recalde — Brand & Communication Strategist, Tokyo"
+  description="Brand and communication strategist based in Tokyo. Founder of NODA.Tokyo and supein.club. Spain–Japan digital communication, branding and SEO."
 >
   <Nav currentPage="home" />
   <main class="flex-1">
@@ -18,11 +18,11 @@ import Footer from '../components/Footer.astro';
             <h1 class="m-0 font-display font-medium text-[clamp(52px,9vw,92px)] leading-none tracking-[-0.015em] text-ink">
               David Recalde<span class="text-accent">·</span>
             </h1>
-            <p class="mt-[26px] max-w-[30ch] font-sans text-[clamp(18px,2.2vw,21px)] leading-[1.45] text-ink">
-              Designer &amp; Communication Consultant based in Tokyo.
+            <p class="mt-[18px] font-sans text-[18px] text-muted">
+              Brand &amp; Communication Strategist
             </p>
-            <p class="mt-5 max-w-[42ch] font-sans text-base leading-[1.7] text-muted">
-              I help brands and institutions build their digital presence at the intersection of Spain, Japan and Europe.
+            <p class="mt-[10px] font-sans font-semibold text-[17px] tracking-[0.01em] text-ink">
+              Design, build, grow.
             </p>
             <a
               href="/contact/"
@@ -33,7 +33,7 @@ import Footer from '../components/Footer.astro';
             <div class="relative aspect-square w-full overflow-hidden rounded-sm border border-border bg-[#F6F6F4]">
               <img
                 src="/images/david-recalde.jpg"
-                alt="David Recalde — Designer and Communication Consultant based in Tokyo"
+                alt="David Recalde — Brand and Communication Strategist based in Tokyo"
                 class="absolute inset-0 h-full w-full object-cover"
                 loading="eager"
               />
@@ -42,13 +42,29 @@ import Footer from '../components/Footer.astro';
         </div>
       </section>
 
-      <!-- Short intro -->
+      <!-- Elevator pitch -->
       <section class="mx-auto max-w-[960px] w-full border-t border-border px-[clamp(20px,5vw,40px)] py-[clamp(40px,6vw,72px)]">
-        <p class="m-0 max-w-[48ch] font-sans text-[clamp(18px,2.3vw,22px)] leading-[1.6] text-ink">
-          With a background in product design and over a decade working in Tokyo, I focus on digital communication, branding and SEO for organizations that operate between Spain, Japan and Europe.
+        <p class="m-0 mb-7 max-w-[44ch] font-sans text-[19px] text-ink">
+          There are three things every brand needs to truly exist:
         </p>
-        <p class="mt-7 font-sans text-[13px] font-medium tracking-[0.04em] text-muted">
-          Studio Lead at NODA.Tokyo&nbsp;&middot;&nbsp;Founder of supein.club
+        <div class="flex flex-col gap-3 mb-7">
+          <p class="m-0 max-w-[50ch] font-sans text-[17px] leading-[1.6] text-muted">
+            <strong class="font-semibold text-ink">Design</strong> — an identity that makes sense.
+          </p>
+          <p class="m-0 max-w-[50ch] font-sans text-[17px] leading-[1.6] text-muted">
+            <strong class="font-semibold text-ink">Build</strong> — the digital platform that sustains it.
+          </p>
+          <p class="m-0 max-w-[50ch] font-sans text-[17px] leading-[1.6] text-muted">
+            <strong class="font-semibold text-ink">Grow</strong> — so it gets found when someone&rsquo;s looking.
+          </p>
+        </div>
+        <p class="m-0 mb-7 font-sans text-[17px] leading-[1.6] text-ink">
+          I&rsquo;ve spent over a decade doing exactly that.<br /><strong class="font-semibold">Design, build, grow.</strong>
+        </p>
+        <p class="m-0 font-sans text-[15px] text-muted">
+          Studio Lead at <a href="https://noda.tokyo" target="_blank" rel="noopener" class="text-ink border-b border-border hover:border-ink transition-colors duration-200 no-underline">NODA.Tokyo</a>
+          &middot;
+          Founder of <a href="https://supein.club" target="_blank" rel="noopener" class="text-ink border-b border-border hover:border-ink transition-colors duration-200 no-underline">supein.club</a>
         </p>
       </section>
 
@@ -57,10 +73,12 @@ import Footer from '../components/Footer.astro';
         <p class="mb-7 font-sans text-xs font-medium uppercase tracking-[0.16em] text-muted">
           Selected clients &amp; institutions
         </p>
-        <div class="flex flex-wrap items-center gap-x-10 gap-y-[18px]">
-          {['Instituto Cervantes', 'Embassy of Spain', 'JICA', 'ICEX', 'University of Tokyo'].map(name => (
-            <span class="font-sans text-[13px] font-semibold uppercase tracking-[0.1em] text-muted">{name}</span>
-          ))}
+        <div class="logo-row">
+          <img src="/images/logos/instituto-cervantes.svg" alt="Instituto Cervantes Tokyo" loading="lazy" />
+          <img src="/images/logos/embassy-spain.svg" alt="Embassy of Spain in Japan" loading="lazy" />
+          <img src="/images/logos/jica.svg" alt="JICA — Japan International Cooperation Agency" loading="lazy" />
+          <img src="/images/logos/icex.svg" alt="ICEX — Spain Trade and Investment" loading="lazy" />
+          <img src="/images/logos/utokyo.svg" alt="University of Tokyo" loading="lazy" />
         </div>
       </section>
 

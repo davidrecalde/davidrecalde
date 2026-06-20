@@ -28,3 +28,24 @@
         color: #B3B3B3;
     }
 }
+
+@layer components {
+    .logo-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 16px 48px;
+        margin-top: 24px;
+    }
+    .logo-row img {
+        height: 28px;
+        width: auto;
+        filter: grayscale(100%);
+        opacity: 0.45;
+        transition: opacity 0.2s ease, filter 0.2s ease;
+    }
+    .logo-row img:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+    }
+}
