@@ -8,76 +8,74 @@ import Footer from '../components/Footer.astro';
   description="Get in touch for consulting projects and collaborations. Digital communication, design and SEO between Spain, Japan and Europe."
 >
   <Nav currentPage="contact" />
-  <main class="flex-1">
-    <div class="animate-fade-up">
+  <main id="main-content" class="flex-1">
 
-      <!-- Page header -->
-      <section class="mx-auto max-w-[960px] w-full px-[clamp(20px,5vw,40px)] pt-[clamp(44px,7vw,88px)] pb-[clamp(32px,4vw,48px)]">
-        <p class="mb-4 font-sans text-xs font-medium uppercase tracking-[0.16em] text-muted">Get in touch</p>
-        <h1 class="m-0 font-display font-medium text-[clamp(44px,7vw,72px)] leading-none tracking-[-0.01em] text-ink">Contact</h1>
-        <p class="mt-7 max-w-[46ch] font-sans text-[17px] leading-[1.7] text-muted">
-          I&rsquo;m available for consulting projects and collaborations. Feel free to reach out.
-        </p>
-      </section>
+    <!-- Page header -->
+    <section class="hero-enter mx-auto max-w-[960px] w-full px-[clamp(20px,5vw,40px)] pt-[clamp(48px,8vw,96px)] pb-[clamp(36px,5vw,56px)]">
+      <p class="mb-4 font-sans text-xs font-medium uppercase tracking-[0.16em] text-muted">Get in touch</p>
+      <h1 class="m-0 font-display font-medium text-[clamp(44px,7vw,72px)] leading-none tracking-[-0.02em] text-ink">Contact</h1>
+      <p class="mt-7 max-w-[46ch] font-sans text-[17px] leading-[1.7] text-muted">
+        I&rsquo;m available for consulting projects and collaborations. Feel free to reach out.
+      </p>
+    </section>
 
-      <!-- Form + Direct links -->
-      <section class="mx-auto max-w-[960px] w-full px-[clamp(20px,5vw,40px)] pt-[clamp(24px,4vw,40px)] pb-[clamp(48px,7vw,80px)]">
-        <div class="flex flex-wrap items-start gap-[clamp(40px,6vw,80px)]">
+    <!-- Form + Direct links -->
+    <section data-reveal class="mx-auto max-w-[960px] w-full px-[clamp(20px,5vw,40px)] pt-[clamp(28px,4vw,48px)] pb-[clamp(56px,8vw,96px)]">
+      <div class="flex flex-wrap items-start gap-[clamp(40px,6vw,80px)]">
 
-          <!-- Form -->
-          <div class="min-w-[280px] flex-[1_1_380px]">
-            <div id="thank-you" class="hidden border-t border-ink pt-8">
-              <p class="m-0 font-display font-medium text-[32px] leading-[1.1] text-ink">Thank you<span class="text-accent">·</span></p>
-              <p class="mt-3.5 font-sans text-base leading-[1.7] text-muted">Your message has been noted. I&rsquo;ll be in touch shortly.</p>
+        <!-- Form -->
+        <div class="min-w-[280px] flex-[1_1_380px]">
+          <div id="thank-you" class="hidden border-t border-ink pt-8">
+            <p class="m-0 font-display font-medium text-[32px] leading-[1.1] text-ink">Thank you<span class="text-accent">·</span></p>
+            <p class="mt-3.5 font-sans text-base leading-[1.7] text-muted">Your message has been noted. I&rsquo;ll be in touch shortly.</p>
+          </div>
+          <form id="contact-form" class="border-t border-ink pt-7">
+            <div class="mb-[26px]">
+              <label class="mb-2 block font-sans text-[11px] font-medium uppercase tracking-[0.14em] text-muted">Name</label>
+              <input
+                type="text"
+                name="name"
+                required
+                class="w-full border-0 border-b border-border bg-transparent py-2 font-sans text-base text-ink outline-none focus:border-ink transition-colors duration-200"
+              />
             </div>
-            <form id="contact-form" class="border-t border-ink pt-7">
-              <div class="mb-[26px]">
-                <label class="mb-2 block font-sans text-[11px] font-medium uppercase tracking-[0.14em] text-muted">Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  class="w-full border-0 border-b border-border bg-transparent py-2 font-sans text-base text-ink outline-none focus:border-ink transition-colors duration-200"
-                />
-              </div>
-              <div class="mb-[26px]">
-                <label class="mb-2 block font-sans text-[11px] font-medium uppercase tracking-[0.14em] text-muted">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  class="w-full border-0 border-b border-border bg-transparent py-2 font-sans text-base text-ink outline-none focus:border-ink transition-colors duration-200"
-                />
-              </div>
-              <div class="mb-[30px]">
-                <label class="mb-2 block font-sans text-[11px] font-medium uppercase tracking-[0.14em] text-muted">Message</label>
-                <textarea
-                  name="message"
-                  rows="4"
-                  required
-                  class="w-full resize-y border-0 border-b border-border bg-transparent py-2 font-sans text-base text-ink outline-none focus:border-ink transition-colors duration-200"
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                class="inline-flex items-center gap-2 rounded bg-accent px-[26px] py-3.5 font-sans text-[15px] font-medium text-white border-none cursor-pointer hover:bg-accent-dark transition-colors duration-200"
-              >Send message&nbsp;&rarr;</button>
-            </form>
-          </div>
-
-          <!-- Direct links -->
-          <div class="min-w-[220px] flex-[0_1_260px]">
-            <p class="mb-5 font-sans text-xs font-medium uppercase tracking-[0.16em] text-muted">Direct</p>
-            <a href="mailto:hello@davidrecalde.com" class="block border-b border-border py-3 font-sans text-base text-ink no-underline hover:text-accent transition-colors duration-200">hello@davidrecalde.com</a>
-            <a href="https://www.linkedin.com/in/davidrecalde/" target="_blank" rel="noopener" class="block border-b border-border py-3 font-sans text-base text-ink no-underline hover:text-accent transition-colors duration-200">LinkedIn</a>
-            <a href="https://noda.tokyo" target="_blank" rel="noopener" class="block border-b border-border py-3 font-sans text-base text-ink no-underline hover:text-accent transition-colors duration-200">NODA.Tokyo</a>
-            <a href="https://supein.club" target="_blank" rel="noopener" class="block py-3 font-sans text-base text-ink no-underline hover:text-accent transition-colors duration-200">supein.club</a>
-          </div>
-
+            <div class="mb-[26px]">
+              <label class="mb-2 block font-sans text-[11px] font-medium uppercase tracking-[0.14em] text-muted">Email</label>
+              <input
+                type="email"
+                name="email"
+                required
+                class="w-full border-0 border-b border-border bg-transparent py-2 font-sans text-base text-ink outline-none focus:border-ink transition-colors duration-200"
+              />
+            </div>
+            <div class="mb-[30px]">
+              <label class="mb-2 block font-sans text-[11px] font-medium uppercase tracking-[0.14em] text-muted">Message</label>
+              <textarea
+                name="message"
+                rows="4"
+                required
+                class="w-full resize-y border-0 border-b border-border bg-transparent py-2 font-sans text-base text-ink outline-none focus:border-ink transition-colors duration-200"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="inline-flex items-center gap-2 rounded-[5px] bg-accent px-[26px] py-3.5 font-sans text-[15px] font-medium text-white border-none cursor-pointer hover:bg-accent-dark active:scale-[0.98] transition-all duration-200"
+            >Send message&nbsp;&rarr;</button>
+          </form>
         </div>
-      </section>
 
-    </div>
+        <!-- Direct links -->
+        <div class="min-w-[220px] flex-[0_1_260px]">
+          <p class="mb-5 font-sans text-xs font-medium uppercase tracking-[0.16em] text-muted">Direct</p>
+          <a href="mailto:hello@davidrecalde.com" class="block border-b border-border py-3 font-sans text-base text-ink no-underline hover:text-accent transition-colors duration-200">hello@davidrecalde.com</a>
+          <a href="https://www.linkedin.com/in/davidrecalde/" target="_blank" rel="noopener" class="block border-b border-border py-3 font-sans text-base text-ink no-underline hover:text-accent transition-colors duration-200">LinkedIn</a>
+          <a href="https://noda.tokyo" target="_blank" rel="noopener" class="block border-b border-border py-3 font-sans text-base text-ink no-underline hover:text-accent transition-colors duration-200">NODA.Tokyo</a>
+          <a href="https://supein.club" target="_blank" rel="noopener" class="block py-3 font-sans text-base text-ink no-underline hover:text-accent transition-colors duration-200">supein.club</a>
+        </div>
+
+      </div>
+    </section>
+
   </main>
   <Footer />
 </BaseLayout>
