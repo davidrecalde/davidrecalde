@@ -8,13 +8,15 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 export function initScrollAnimations() {
   if (prefersReducedMotion) return;
 
-  // Hero — tagline + name + role fade in on load
+  // Hero — tagline + name + role + CTA fade in on load
   const heroTl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 0.7 } });
 
   heroTl
     .from('.hero-tagline-xl', { opacity: 0, y: 30, duration: 0.8 })
     .from('.hero-name-sub', { opacity: 0, y: 16 }, '-=0.3')
-    .from('.hero-role-sub', { opacity: 0, y: 12 }, '-=0.4');
+    .from('.hero-role-sub', { opacity: 0, y: 12 }, '-=0.4')
+    .from('.hero-cta', { opacity: 0, y: 10 }, '-=0.35')
+    .from('.hero-scroll-hint', { opacity: 0 }, '-=0.2');
 
   // Service cards — scale+fade on scroll
   gsap.from('.service-card', {

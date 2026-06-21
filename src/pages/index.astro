@@ -16,42 +16,47 @@ import GridSystem from '../components/GridSystem.astro';
       <div class="hero-grid-bg" aria-hidden="true">
         <GridSystem columns={8} rows={5} />
       </div>
-      <h1 class="hero-tagline-xl">Design, Build, Grow.</h1>
-    </section>
-
-    <!-- Name + role -->
-    <section class="mx-auto max-w-[960px] w-full px-[clamp(20px,5vw,40px)] py-[clamp(48px,7vw,88px)]">
-      <p class="hero-name-sub m-0 text-center font-display font-medium text-[clamp(28px,4vw,36px)] text-ink">David Recalde</p>
-      <p class="hero-role-sub mt-2 text-center font-sans text-base text-muted">Brand &amp; Communication Strategist</p>
+      <div class="hero-content">
+        <h1 class="hero-tagline-xl">Design, Build, Grow.</h1>
+        <p class="hero-name-sub">David Recalde</p>
+        <p class="hero-role-sub">Brand &amp; Communication Strategist &mdash; Tokyo</p>
+        <a
+          href="/contact/"
+          class="btn-primary hero-cta"
+        >Get in touch&nbsp;&rarr;</a>
+      </div>
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <span></span>
+      </div>
     </section>
 
     <!-- What I do -->
-    <section class="mx-auto max-w-[960px] w-full border-t border-border px-[clamp(20px,5vw,40px)] py-[clamp(48px,7vw,88px)]">
-      <p class="mb-10 font-sans text-xs font-medium uppercase tracking-[0.16em] text-muted">
+    <section class="mx-auto max-w-[960px] w-full border-t border-border px-[clamp(20px,5vw,40px)] py-[clamp(40px,6vw,72px)]">
+      <p class="mb-8 font-sans text-xs font-medium uppercase tracking-[0.16em] text-muted">
         What I do
       </p>
-      <div class="services-grid grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-[clamp(32px,4vw,48px)]">
-        <div class="service-card border-t border-ink pt-[22px]">
+      <div class="services-grid grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-[clamp(28px,4vw,44px)]">
+        <div class="service-card border-t border-ink pt-[20px]">
           <span class="font-sans text-xs font-medium tracking-[0.14em] text-muted">01</span>
-          <h3 class="mx-0 mt-3.5 mb-3 font-display font-medium text-[27px] leading-[1.15] tracking-[-0.01em] text-ink">Digital Communication</h3>
+          <h3 class="mx-0 mt-3 mb-2.5 font-display font-medium text-[25px] leading-[1.15] tracking-[-0.01em] text-ink">Digital Communication</h3>
           <p class="m-0 font-sans text-[15px] leading-[1.65] text-muted">Strategy, content and platform development for cultural and institutional organizations working between Spain and Japan.</p>
         </div>
-        <div class="service-card border-t border-ink pt-[22px]">
+        <div class="service-card border-t border-ink pt-[20px]">
           <span class="font-sans text-xs font-medium tracking-[0.14em] text-muted">02</span>
-          <h3 class="mx-0 mt-3.5 mb-3 font-display font-medium text-[27px] leading-[1.15] tracking-[-0.01em] text-ink">Design &amp; Branding</h3>
+          <h3 class="mx-0 mt-3 mb-2.5 font-display font-medium text-[25px] leading-[1.15] tracking-[-0.01em] text-ink">Design &amp; Branding</h3>
           <p class="m-0 font-sans text-[15px] leading-[1.65] text-muted">Visual identity, editorial and digital design. From concept to execution — for clients that need both strategic thinking and craft.</p>
         </div>
-        <div class="service-card border-t border-ink pt-[22px]">
+        <div class="service-card border-t border-ink pt-[20px]">
           <span class="font-sans text-xs font-medium tracking-[0.14em] text-muted">03</span>
-          <h3 class="mx-0 mt-3.5 mb-3 font-display font-medium text-[27px] leading-[1.15] tracking-[-0.01em] text-ink">SEO &amp; Content Strategy</h3>
+          <h3 class="mx-0 mt-3 mb-2.5 font-display font-medium text-[25px] leading-[1.15] tracking-[-0.01em] text-ink">SEO &amp; Content Strategy</h3>
           <p class="m-0 font-sans text-[15px] leading-[1.65] text-muted">Multilingual SEO architecture and content strategy for digital platforms targeting Japanese and Spanish-speaking audiences.</p>
         </div>
       </div>
     </section>
 
     <!-- Client logos -->
-    <section class="mx-auto max-w-[960px] w-full border-t border-border px-[clamp(20px,5vw,40px)] pt-[clamp(40px,6vw,64px)] pb-[clamp(44px,6vw,72px)]">
-      <p class="mb-7 font-sans text-xs font-medium uppercase tracking-[0.16em] text-muted">
+    <section class="mx-auto max-w-[960px] w-full border-t border-border px-[clamp(20px,5vw,40px)] pt-[clamp(32px,5vw,52px)] pb-[clamp(40px,6vw,64px)]">
+      <p class="mb-6 font-sans text-xs font-medium uppercase tracking-[0.16em] text-muted">
         Selected clients &amp; institutions
       </p>
       <div class="logo-row">
