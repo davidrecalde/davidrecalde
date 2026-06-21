@@ -6,7 +6,7 @@ export const personSchema = {
   jobTitle: "Brand & Communication Strategist",
   url: "https://davidrecalde.com",
   sameAs: [
-    "https://www.linkedin.com/in/davidrecalde/",
+    "https://www.linkedin.com/in/davidgarciarecalde/",
     "https://noda.tokyo",
     "https://supein.club",
   ],

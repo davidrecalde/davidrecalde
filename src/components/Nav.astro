@@ -11,8 +11,8 @@ const links = [
 ---
 <nav class="sticky top-0 z-50 border-b border-border bg-white/[0.92] backdrop-blur-[8px] backdrop-saturate-[1.8]">
   <div class="mx-auto flex h-[72px] max-w-[960px] w-full items-center justify-between px-[clamp(20px,5vw,40px)]">
-    <a href="/" class="font-sans text-base font-semibold tracking-[0.01em] text-ink no-underline">
-      David Recalde<span class="text-accent">·</span>
+    <a href="/" class="font-sans text-base tracking-[0.01em] text-ink no-underline inline-flex gap-[0.25em]">
+      <span class="font-light">David</span><span class="font-bold">Recalde</span>
     </a>
     <div class="hidden md:flex items-center gap-[34px]">
       {links.map(link => (
@@ -41,8 +41,8 @@ const links = [
 <!-- Mobile menu overlay -->
 <div id="mobile-menu" class="fixed inset-0 z-[100] flex flex-col bg-white hidden">
   <div class="flex h-[72px] items-center justify-between border-b border-border px-[clamp(20px,5vw,40px)]">
-    <a href="/" class="font-sans text-base font-semibold text-ink no-underline">
-      David Recalde<span class="text-accent">·</span>
+    <a href="/" class="font-sans text-base text-ink no-underline inline-flex gap-[0.25em]">
+      <span class="font-light">David</span><span class="font-bold">Recalde</span>
     </a>
     <button
       id="menu-close"
