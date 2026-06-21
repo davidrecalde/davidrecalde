@@ -12,7 +12,7 @@ import Footer from '../components/Footer.astro';
 
     <!-- Page header -->
     <section class="hero-enter mx-auto max-w-[960px] w-full px-[clamp(20px,5vw,40px)] pt-[clamp(48px,8vw,96px)] pb-[clamp(36px,5vw,56px)]">
-      <p class="mb-4 font-sans text-xs font-medium uppercase tracking-[0.16em] text-muted">Profile</p>
+      <p class="mb-4 font-sans text-xs font-medium uppercase tracking-[0.16em] text-muted">(02) About</p>
       <h1 class="m-0 font-display font-medium text-[clamp(44px,7vw,72px)] leading-none tracking-[-0.02em] text-ink">About</h1>
     </section>
 
@@ -30,16 +30,25 @@ import Footer from '../components/Footer.astro';
             Today I lead the studio at NODA.Tokyo and run supein.club, a Japanese-language media platform about Spain. Over the past decade I&rsquo;ve advised institutions including the Instituto Cervantes Tokyo, the Embassy of Spain in Japan, JICA and ICEX — helping them communicate clearly across the Spain&ndash;Japan&ndash;Europe space.
           </p>
         </div>
-        <div class="min-w-[220px] max-w-[340px] w-full flex-[0_1_300px]">
-          <div class="relative aspect-square w-full overflow-hidden rounded-[8px] border border-border bg-[#F7F6F3]">
-            <img
-              src="/images/david-recalde.jpg"
-              alt="David Recalde"
-              width="680"
-              height="680"
-              class="absolute inset-0 h-full w-full object-cover"
-              loading="lazy"
-            />
+        <div class="min-w-[220px] max-w-[420px] w-full flex-[0_1_340px]">
+          <div class="about-grid-photo">
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell grid-cell--photo">
+              <img
+                src="/images/david-recalde.jpg"
+                alt="David Recalde"
+                width="680"
+                height="680"
+                loading="lazy"
+              />
+            </div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
           </div>
         </div>
       </div>

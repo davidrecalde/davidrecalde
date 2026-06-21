@@ -8,73 +8,15 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 export function initScrollAnimations() {
   if (prefersReducedMotion) return;
 
-  // BEAT 1 — DESIGN (Hero)
-  // Elements compose into place with stagger, like a layout being designed.
-  const heroSection = document.querySelector('.hero-name')?.closest('section');
+  // Hero — tagline + name + role fade in on load
   const heroTl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 0.7 } });
 
   heroTl
-    .from('.hero-name', { opacity: 0, y: 24, duration: 0.6 })
-    .from('.hero-role', { opacity: 0, y: 16 }, '-=0.35')
-    .from('.hero-tagline', { opacity: 0, y: 16 }, '-=0.4')
-    .from(heroSection?.querySelector('.btn-primary') || [], { opacity: 0, y: 12 }, '-=0.35')
-    .from('.hero-photo img', { opacity: 0, scale: 1.04, duration: 0.8 }, '-=0.6');
+    .from('.hero-tagline-xl', { opacity: 0, y: 30, duration: 0.8 })
+    .from('.hero-name-sub', { opacity: 0, y: 16 }, '-=0.3')
+    .from('.hero-role-sub', { opacity: 0, y: 12 }, '-=0.4');
 
-  // BEAT 2 — BUILD (Elevator pitch)
-  // Lines stack sequentially — structural, assembling.
-  gsap.from('.pitch-intro', {
-    scrollTrigger: {
-      trigger: '.pitch-block',
-      start: 'top 80%',
-      toggleActions: 'play none none none',
-    },
-    opacity: 0,
-    y: 20,
-    duration: 0.5,
-    ease: 'power2.out',
-  });
-
-  gsap.from('.pitch-line', {
-    scrollTrigger: {
-      trigger: '.pitch-block',
-      start: 'top 75%',
-      toggleActions: 'play none none none',
-    },
-    opacity: 0,
-    y: 18,
-    duration: 0.5,
-    ease: 'power2.out',
-    stagger: 0.15,
-  });
-
-  gsap.from('.pitch-summary, .roles-line', {
-    scrollTrigger: {
-      trigger: '.pitch-summary',
-      start: 'top 85%',
-      toggleActions: 'play none none none',
-    },
-    opacity: 0,
-    y: 14,
-    duration: 0.5,
-    ease: 'power2.out',
-    stagger: 0.1,
-  });
-
-  // BEAT 3 — GROW (Logos + Service cards)
-  // Subtle scale-up — expansion/reach.
-  gsap.from('.logo-row img', {
-    scrollTrigger: {
-      trigger: '.logo-row',
-      start: 'top 85%',
-      toggleActions: 'play none none none',
-    },
-    opacity: 0,
-    scale: 0.92,
-    duration: 0.5,
-    ease: 'power2.out',
-    stagger: 0.08,
-  });
-
+  // Service cards — scale+fade on scroll
   gsap.from('.service-card', {
     scrollTrigger: {
       trigger: '.services-grid',
@@ -89,18 +31,35 @@ export function initScrollAnimations() {
     stagger: 0.15,
   });
 
-  // CTA — simple, confident entrance
-  gsap.from('.cta-block > *', {
+  // Logos — subtle scale-up
+  gsap.from('.logo-row img', {
     scrollTrigger: {
-      trigger: '.cta-block',
-      start: 'top 80%',
+      trigger: '.logo-row',
+      start: 'top 85%',
       toggleActions: 'play none none none',
     },
     opacity: 0,
-    y: 18,
+    scale: 0.92,
     duration: 0.5,
     ease: 'power2.out',
-    stagger: 0.1,
+    stagger: 0.08,
+  });
+}
+
+export function initWorkTableAnimation() {
+  if (prefersReducedMotion) return;
+
+  gsap.from('.work-table tbody tr', {
+    scrollTrigger: {
+      trigger: '.work-table',
+      start: 'top 85%',
+      toggleActions: 'play none none none',
+    },
+    opacity: 0,
+    y: 16,
+    duration: 0.5,
+    ease: 'power2.out',
+    stagger: 0.08,
   });
 }
 
