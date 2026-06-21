@@ -127,80 +127,222 @@
         padding: 0 24px;
     }
 
-    /* ── About photo grid ── */
-    .about-grid-photo {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+    /* ── Name section (Home) ── */
+    .name-section {
+        background: #FAFAF8;
+        padding: clamp(56px, 8vw, 96px) 0;
+    }
+    .name-h1 {
+        font-family: var(--font-display);
+        font-weight: 500;
+        font-size: clamp(24px, 3.2vw, 34px);
+        color: var(--color-ink);
+        margin: 0 0 28px;
+        line-height: 1.3;
+    }
+    .name-divider {
+        color: var(--color-muted);
+        font-weight: 300;
+        margin: 0 4px;
+    }
+
+    /* ── About photo composition ── */
+    .about-photo-composition {
+        display: flex;
+        flex-direction: column;
         gap: 12px;
-        max-width: 420px;
+        max-width: 480px;
         width: 100%;
     }
-    .grid-cell {
+    .apc-row {
+        display: flex;
+        gap: 12px;
+    }
+    .apc-row--top {
+        padding-left: 30%;
+    }
+    .apc-cell-sm {
+        flex: 1;
         aspect-ratio: 4 / 3;
         background: #F4F4F4;
         border-radius: 2px;
         box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        max-width: 110px;
     }
-    .grid-cell--photo {
-        background: none;
-        box-shadow: none;
-        overflow: hidden;
+    .apc-cell--active {
+        background: var(--color-ink);
+    }
+    .apc-photo {
+        width: 100%;
+        aspect-ratio: 5 / 4;
         border-radius: 2px;
+        overflow: hidden;
     }
-    .grid-cell--photo img {
+    .apc-photo img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         display: block;
     }
-
-    /* ── Work table ── */
-    .work-table {
-        width: 100%;
-        border-collapse: collapse;
+    .apc-row--bottom {
+        padding-right: 20%;
     }
-    .work-table thead th {
-        text-align: left;
+    @media (max-width: 640px) {
+        .apc-row--top, .apc-row--bottom { display: none; }
+    }
+
+    /* ── Career timeline ── */
+    .career-track {
+        position: relative;
+        padding-left: 32px;
+        max-width: 640px;
+    }
+    .career-line-bg {
+        position: absolute;
+        left: 3px;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: var(--color-border);
+    }
+    .career-line-fill {
+        position: absolute;
+        left: 3px;
+        top: 0;
+        width: 1px;
+        height: 0%;
+        background: var(--color-ink);
+        transform-origin: top;
+    }
+    .career-entry {
+        position: relative;
+        padding-bottom: 36px;
+    }
+    .career-entry:last-child { padding-bottom: 0; }
+    .career-dot {
+        position: absolute;
+        left: -32px;
+        top: 6px;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--color-border);
+        transition: background 0.3s ease;
+    }
+    .career-entry.is-active .career-dot {
+        background: var(--color-ink);
+    }
+    .career-date {
+        font-family: var(--font-sans);
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--color-muted);
+        margin: 0 0 2px;
+    }
+    .career-city {
+        font-family: var(--font-sans);
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--color-accent);
+        margin: 0 0 6px;
+    }
+    .career-title {
+        font-family: var(--font-sans);
+        font-size: 17px;
+        font-weight: 600;
+        color: var(--color-ink);
+        margin: 0;
+    }
+    .career-org {
+        font-family: var(--font-sans);
+        font-size: 15px;
+        color: var(--color-muted);
+        margin: 3px 0 0;
+    }
+
+    /* ── Cases accordion ── */
+    .cases-header {
+        display: grid;
+        grid-template-columns: 2fr 1.2fr 2fr;
+        gap: 16px;
         font-family: var(--font-sans);
         font-size: 11px;
         font-weight: 500;
         letter-spacing: 0.12em;
         text-transform: uppercase;
         color: var(--color-muted);
-        padding: 0 0 16px;
+        padding-bottom: 16px;
         border-bottom: 1px solid var(--color-ink);
     }
-    .work-table tbody tr {
+    .cases-item {
         border-bottom: 1px solid var(--color-border);
+    }
+    .cases-trigger {
+        display: grid;
+        grid-template-columns: 2fr 1.2fr 2fr;
+        gap: 16px;
+        align-items: center;
+        width: 100%;
+        background: none;
+        border: none;
+        padding: 22px 0;
+        font-family: var(--font-sans);
+        text-align: left;
+        cursor: pointer;
         transition: background 0.2s ease;
     }
-    .work-table tbody tr:hover {
+    .cases-trigger:hover {
         background: #FAFAFA;
     }
-    .work-table td {
-        padding: 22px 16px 22px 0;
-        font-family: var(--font-sans);
-        font-size: 16px;
-        color: var(--color-ink);
-        vertical-align: middle;
-    }
-    .work-name {
+    .case-name {
         font-weight: 600;
+        color: var(--color-ink);
+        font-size: 16px;
     }
-    .work-sector,
-    .work-role {
+    .case-sector {
         color: var(--color-muted);
+        font-size: 15px;
+    }
+    .case-services {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: var(--color-muted);
+        font-size: 15px;
+    }
+    .case-chevron {
+        font-size: 18px;
+        color: var(--color-muted);
+        transition: transform 0.3s ease;
+        margin-left: 12px;
+    }
+    .cases-trigger[aria-expanded="true"] .case-chevron {
+        transform: rotate(45deg);
+    }
+    .cases-panel {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+    .cases-panel p {
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.7;
+        color: var(--color-muted);
+        padding: 0 0 24px;
+        margin: 0;
+        max-width: 60ch;
+    }
+    .cases-item.is-open .cases-panel {
+        max-height: 300px;
     }
     @media (max-width: 640px) {
-        .work-table thead { display: none; }
-        .work-table tbody tr {
-            display: flex;
-            flex-direction: column;
+        .cases-header { display: none; }
+        .cases-trigger {
+            grid-template-columns: 1fr;
             gap: 4px;
-            padding: 18px 0;
-        }
-        .work-table td {
-            padding: 0;
         }
     }
 
@@ -238,5 +380,8 @@
     }
     .ambient-glow {
         display: none;
+    }
+    .career-line-fill {
+        height: 100%;
     }
 }

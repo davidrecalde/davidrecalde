@@ -2,6 +2,23 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+
+const timeline = [
+  { period: '2000 — 2002', city: 'Madrid, Spain', title: 'Technician of Plastic Arts and Design — Furniture', org: 'College of Design, Madrid' },
+  { period: '2004 — 2005', city: 'Madrid, Spain', title: 'Master in 3D Animation and Digital Post-Production', org: 'CICE Training Center' },
+  { period: '2007 — 2012', city: 'Valencia, Spain', title: 'Degree in Product Design', org: 'EASD School of Art and Design' },
+  { period: '2009 — 2010', city: 'Valencia, Spain', title: 'Product Designer', org: 'Ximo Roca Diseño' },
+  { period: '2011', city: 'Budapest, Hungary', title: 'Visiting student, Industrial and Product Design', org: 'Moholy-Nagy University of Art and Design' },
+  { period: '2011 — 2013', city: 'Valencia, Spain', title: 'Product Designer', org: 'Manufacturas Celda / Uno Design' },
+  { period: '2013 — 2014', city: 'Madrid, Spain', title: "Master's Degree in Design", org: 'Complutense University' },
+  { period: '2014 — 2016', city: 'Spain', title: 'Product Designer', org: 'T3cnologic' },
+  { period: '2017 — 2020', city: 'Tokyo, Japan', title: 'Spanish Language Instructor', org: 'JICA — Japan International Cooperation Agency' },
+  { period: '2018 — Present', city: 'Tokyo, Japan', title: 'Founder', org: 'Club Español en Japón · supein.club' },
+  { period: '2020 — 2024', city: 'Tokyo, Japan', title: 'Communication Advisor', org: 'Instituto Cervantes Tokyo' },
+  { period: '2020 — 2024', city: 'Tokyo, Japan', title: 'Digital Content (Freelance)', org: 'Embassy of Spain in Japan' },
+  { period: '2021 — 2023', city: 'Tokyo, Japan', title: 'Communication Advisor', org: 'University of Tokyo, Faculty of Engineering' },
+  { period: '2025 — Present', city: 'Tokyo, Japan', title: 'Studio Lead', org: 'NODA.Tokyo' },
+];
 ---
 <BaseLayout
   title="About — David Recalde"
@@ -30,46 +47,49 @@ import Footer from '../components/Footer.astro';
             Today I lead the studio at NODA.Tokyo and run supein.club, a Japanese-language media platform about Spain. Over the past decade I&rsquo;ve advised institutions including the Instituto Cervantes Tokyo, the Embassy of Spain in Japan, JICA and ICEX — helping them communicate clearly across the Spain&ndash;Japan&ndash;Europe space.
           </p>
         </div>
-        <div class="min-w-[220px] max-w-[420px] w-full flex-[0_1_340px]">
-          <div class="about-grid-photo">
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell grid-cell--photo">
-              <img
-                src="/images/david-recalde.jpg"
-                alt="David Recalde"
-                width="680"
-                height="680"
-                loading="lazy"
-              />
+        <div class="min-w-[220px] max-w-[480px] w-full flex-[0_1_380px]">
+          <div class="about-photo-composition">
+            <div class="apc-row apc-row--top">
+              <div class="apc-cell-sm"></div>
+              <div class="apc-cell-sm apc-cell--active"></div>
             </div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
+            <div class="apc-row apc-row--main">
+              <div class="apc-photo">
+                <img
+                  src="/images/david-recalde.jpg"
+                  alt="David Recalde — Brand & Communication Strategist based in Tokyo"
+                  width="680"
+                  height="680"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <div class="apc-row apc-row--bottom">
+              <div class="apc-cell-sm"></div>
+              <div class="apc-cell-sm"></div>
+              <div class="apc-cell-sm"></div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Career narrative -->
-    <section data-reveal class="mx-auto max-w-[960px] w-full border-t border-border px-[clamp(20px,5vw,40px)] py-[clamp(48px,7vw,88px)]">
-      <p class="mb-4 font-sans text-xs font-medium uppercase tracking-[0.16em] text-muted">Career</p>
-      <p class="mb-[22px] max-w-[65ch] font-sans text-[17px] leading-[1.75] text-ink">
-        My path moved from product design in Spain to communication strategy in Tokyo.
-        I spent three years as a Spanish language instructor at JICA &mdash; Japan&rsquo;s official
-        cooperation agency &mdash; before moving into institutional communication. From 2020
-        to 2024 I was Communication Advisor at the Instituto Cervantes Tokyo, leading
-        marketing, events and content strategy for Spain&rsquo;s cultural institution in Japan.
-      </p>
-      <p class="m-0 max-w-[65ch] font-sans text-[17px] leading-[1.75] text-ink">
-        In 2018 I founded supein.club, a Japanese-language platform about Spain that
-        I still run today. In 2025 I joined NODA.Tokyo as Studio Lead, where I now
-        lead brand and communication projects for clients operating between Spain,
-        Japan and Europe.
-      </p>
+    <!-- Career timeline -->
+    <section class="mx-auto max-w-[960px] w-full border-t border-border px-[clamp(20px,5vw,40px)] py-[clamp(48px,7vw,88px)]">
+      <p class="mb-8 font-sans text-xs font-medium uppercase tracking-[0.16em] text-muted">Career</p>
+      <div class="career-track">
+        <div class="career-line-bg"></div>
+        <div class="career-line-fill" id="career-line-fill"></div>
+        {timeline.map((item) => (
+          <div class="career-entry">
+            <span class="career-dot"></span>
+            <p class="career-date">{item.period}</p>
+            <p class="career-city">{item.city}</p>
+            <p class="career-title">{item.title}</p>
+            <p class="career-org">{item.org}</p>
+          </div>
+        ))}
+      </div>
     </section>
 
     <!-- Focus + Education -->
@@ -116,3 +136,9 @@ import Footer from '../components/Footer.astro';
   </main>
   <Footer />
 </BaseLayout>
+
+<script>
+  import { initCareerTimeline, initHoverPolish } from '../scripts/scroll-animations';
+  initCareerTimeline();
+  initHoverPolish();
+</script>

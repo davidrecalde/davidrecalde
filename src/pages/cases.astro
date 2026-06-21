@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const cases = [
+  {
+    name: 'Instituto Cervantes Tokyo',
+    sector: 'Cultural Institution',
+    services: 'Communication Advisor',
+    desc: 'Led marketing, social media, events and content strategy for Spain’s official cultural institution in Japan over four years. Coordinated newsletters, advertising campaigns and team management, working closely with the Embassy of Spain and institutional partners.',
+  },
+  {
+    name: 'Embassy of Spain in Japan',
+    sector: 'Government',
+    services: 'Digital Content',
+    desc: 'Produced promotional materials, audiovisual content and institutional design for cultural exhibitions, conferences and events at the Embassy premises, as a freelance collaborator to the cultural section.',
+  },
+  {
+    name: 'JICA',
+    sector: 'Government Agency',
+    services: 'Language Instructor',
+    desc: 'Designed and delivered Spanish language programs for Japanese professionals. Defined course content, created teaching materials, and developed evaluation methods adapted to an institutional cooperation context.',
+  },
+  {
+    name: 'ICEX',
+    sector: 'Trade & Investment',
+    services: 'Collaboration',
+    desc: 'Collaborated on institutional communication and digital strategy projects supporting Spain’s trade and investment promotion in the Japanese market.',
+  },
+  {
+    name: 'University of Tokyo',
+    sector: 'Academic',
+    services: 'Graphic Design',
+    desc: 'Developed graphic and digital materials supporting scientific publications for the Faculty of Engineering — visual communication for academic and research contexts.',
+  },
+  {
+    name: 'NODA.Tokyo',
+    sector: 'Studio',
+    services: 'Studio Lead',
+    desc: 'Lead brand and communication projects as Studio Lead, combining strategy, branding and digital design for international clients and public institutions operating in Japan.',
+  },
+  {
+    name: 'supein.club',
+    sector: 'Own Platform',
+    services: 'Founder',
+    desc: 'Founded and built a Japanese-language cultural media platform about Spain from the ground up — brand, SEO architecture, editorial strategy and community, covering gastronomy, travel and culture.',
+  },
+];
+---
+<BaseLayout
+  title="Cases — David Recalde"
+  description="Institutions and organizations I've worked with across design, communication and digital strategy between Spain, Japan and Europe."
+>
+  <Nav currentPage="cases" />
+  <main id="main-content" class="flex-1">
+
+    <!-- Page header -->
+    <section class="hero-enter mx-auto max-w-[960px] w-full px-[clamp(20px,5vw,40px)] pt-[clamp(48px,8vw,96px)] pb-[clamp(36px,5vw,56px)]">
+      <p class="mb-4 font-sans text-xs font-medium uppercase tracking-[0.16em] text-muted">(03) Cases</p>
+      <h1 class="m-0 font-display font-medium text-[clamp(44px,7vw,72px)] leading-none tracking-[-0.02em] text-ink">Cases</h1>
+      <p class="mt-7 max-w-[52ch] font-sans text-[17px] leading-[1.7] text-muted">
+        Institutions and organizations I&rsquo;ve worked with or collaborated on, across design, communication and digital strategy.
+      </p>
+    </section>
+
+    <!-- Cases accordion -->
+    <section class="mx-auto max-w-[960px] w-full px-[clamp(20px,5vw,40px)] pb-[clamp(56px,8vw,96px)]">
+      <div class="cases-list">
+        <div class="cases-header">
+          <span>Institution</span>
+          <span>Sector</span>
+          <span>Services</span>
+        </div>
+        {cases.map((c) => (
+          <div class="cases-item">
+            <button class="cases-trigger" aria-expanded="false">
+              <span class="case-name">{c.name}</span>
+              <span class="case-sector">{c.sector}</span>
+              <span class="case-services">{c.services} <span class="case-chevron">+</span></span>
+            </button>
+            <div class="cases-panel">
+              <p>{c.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</BaseLayout>
+
+<script>
+  import { initCasesAnimation, initHoverPolish } from '../scripts/scroll-animations';
+  initCasesAnimation();
+  initHoverPolish();
+
+  document.querySelectorAll<HTMLButtonElement>('.cases-trigger').forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      const item = trigger.closest('.cases-item');
+      const isOpen = item?.classList.contains('is-open');
+
+      document.querySelectorAll('.cases-item').forEach((el) => {
+        el.classList.remove('is-open');
+        el.querySelector('.cases-trigger')?.setAttribute('aria-expanded', 'false');
+      });
+
+      if (!isOpen && item) {
+        item.classList.add('is-open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>

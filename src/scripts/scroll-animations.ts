@@ -8,17 +8,13 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 export function initScrollAnimations() {
   if (prefersReducedMotion) return;
 
-  // Hero — tagline fades in on load
   gsap.from('.hero-tagline-xl', { opacity: 0, y: 24, duration: 0.8, ease: 'power3.out' });
 
-  // Name + role section — fade in on load with slight delay
   const introTl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 0.6 }, delay: 0.3 });
   introTl
-    .from('.hero-name-section', { opacity: 0, y: 14 })
-    .from('.hero-role-section', { opacity: 0, y: 10 }, '-=0.35')
-    .from('.hero-name-section ~ .btn-primary', { opacity: 0, y: 10 }, '-=0.3');
+    .from('.name-h1', { opacity: 0, y: 14 })
+    .from('.name-section .btn-primary', { opacity: 0, y: 10 }, '-=0.3');
 
-  // Service cards — scale+fade on scroll
   gsap.from('.service-card', {
     scrollTrigger: {
       trigger: '.services-grid',
@@ -33,7 +29,6 @@ export function initScrollAnimations() {
     stagger: 0.15,
   });
 
-  // Logos — subtle scale-up
   gsap.from('.logo-row img', {
     scrollTrigger: {
       trigger: '.logo-row',
@@ -48,12 +43,40 @@ export function initScrollAnimations() {
   });
 }
 
-export function initWorkTableAnimation() {
+export function initCareerTimeline() {
   if (prefersReducedMotion) return;
 
-  gsap.from('.work-table tbody tr', {
+  const track = document.querySelector('.career-track');
+  const fill = document.getElementById('career-line-fill');
+  if (!track || !fill) return;
+
+  gsap.to(fill, {
+    height: '100%',
+    ease: 'none',
     scrollTrigger: {
-      trigger: '.work-table',
+      trigger: track,
+      start: 'top 70%',
+      end: 'bottom 60%',
+      scrub: 0.6,
+    },
+  });
+
+  document.querySelectorAll('.career-entry').forEach((entry) => {
+    ScrollTrigger.create({
+      trigger: entry,
+      start: 'top 75%',
+      onEnter: () => entry.classList.add('is-active'),
+      onLeaveBack: () => entry.classList.remove('is-active'),
+    });
+  });
+}
+
+export function initCasesAnimation() {
+  if (prefersReducedMotion) return;
+
+  gsap.from('.cases-item', {
+    scrollTrigger: {
+      trigger: '.cases-list',
       start: 'top 85%',
       toggleActions: 'play none none none',
     },
