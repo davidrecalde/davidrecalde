@@ -13,22 +13,22 @@ import Footer from '../components/Footer.astro';
     <!-- Hero -->
     <section class="mx-auto max-w-[960px] w-full px-[clamp(20px,5vw,40px)] py-[clamp(48px,9vw,120px)] pb-[clamp(48px,7vw,88px)]">
       <div class="flex flex-wrap items-center gap-[clamp(32px,6vw,72px)]">
-        <div class="min-w-[280px] flex-[1_1_380px] hero-enter">
-          <h1 class="m-0 font-display font-medium text-[clamp(52px,9vw,92px)] leading-none tracking-[-0.02em] text-ink">
+        <div class="min-w-[280px] flex-[1_1_380px]">
+          <h1 class="hero-name m-0 font-display font-medium text-[clamp(52px,9vw,92px)] leading-none tracking-[-0.02em] text-ink">
             David Recalde<span class="text-accent">·</span>
           </h1>
-          <p class="mt-[18px] font-sans text-[18px] text-muted">
+          <p class="hero-role mt-[18px] font-sans text-[18px] text-muted">
             Brand &amp; Communication Strategist
           </p>
-          <p class="mt-[10px] font-sans font-semibold text-[17px] tracking-[0.01em] text-ink">
+          <p class="hero-tagline mt-[10px] font-sans font-semibold text-[17px] tracking-[0.01em] text-ink">
             Design, build, grow.
           </p>
           <a
             href="/contact/"
-            class="mt-[34px] inline-flex items-center gap-2 rounded-[5px] bg-accent px-[26px] py-3.5 font-sans text-[15px] font-medium tracking-[0.01em] text-white no-underline hover:bg-accent-dark active:scale-[0.98] transition-all duration-200"
+            class="btn-primary mt-[34px] inline-flex items-center gap-2 rounded-[5px] bg-accent px-[26px] py-3.5 font-sans text-[15px] font-medium tracking-[0.01em] text-white no-underline hover:bg-accent-dark active:scale-[0.98]"
           >Get in touch&nbsp;&rarr;</a>
         </div>
-        <div class="min-w-[240px] max-w-[380px] w-full flex-[0_1_340px] hero-enter-delayed">
+        <div class="hero-photo min-w-[240px] max-w-[380px] w-full flex-[0_1_340px]">
           <div class="relative aspect-square w-full overflow-hidden rounded-[8px] border border-border bg-[#F7F6F3]">
             <img
               src="/images/david-recalde.jpg"
@@ -44,25 +44,25 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- Elevator pitch -->
-    <section data-reveal class="mx-auto max-w-[960px] w-full border-t border-border px-[clamp(20px,5vw,40px)] py-[clamp(48px,7vw,88px)]">
-      <p class="m-0 mb-7 max-w-[44ch] font-sans text-[19px] leading-[1.6] text-ink">
+    <section class="mx-auto max-w-[960px] w-full border-t border-border px-[clamp(20px,5vw,40px)] py-[clamp(48px,7vw,88px)]">
+      <p class="pitch-intro m-0 mb-7 max-w-[44ch] font-sans text-[19px] leading-[1.6] text-ink">
         There are three things every brand needs to truly exist:
       </p>
-      <div class="flex flex-col gap-3 mb-7">
-        <p class="m-0 max-w-[50ch] font-sans text-[17px] leading-[1.6] text-muted">
+      <div class="pitch-block flex flex-col gap-3 mb-7">
+        <p class="pitch-line m-0 max-w-[50ch] font-sans text-[17px] leading-[1.6] text-muted">
           <strong class="font-semibold text-ink">Design</strong> — an identity that makes sense.
         </p>
-        <p class="m-0 max-w-[50ch] font-sans text-[17px] leading-[1.6] text-muted">
+        <p class="pitch-line m-0 max-w-[50ch] font-sans text-[17px] leading-[1.6] text-muted">
           <strong class="font-semibold text-ink">Build</strong> — the digital platform that sustains it.
         </p>
-        <p class="m-0 max-w-[50ch] font-sans text-[17px] leading-[1.6] text-muted">
+        <p class="pitch-line m-0 max-w-[50ch] font-sans text-[17px] leading-[1.6] text-muted">
           <strong class="font-semibold text-ink">Grow</strong> — so it gets found when someone&rsquo;s looking.
         </p>
       </div>
-      <p class="m-0 mb-7 font-sans text-[17px] leading-[1.6] text-ink">
+      <p class="pitch-summary m-0 mb-7 font-sans text-[17px] leading-[1.6] text-ink">
         I&rsquo;ve spent over a decade doing exactly that.<br /><strong class="font-semibold">Design, build, grow.</strong>
       </p>
-      <p class="m-0 font-sans text-[15px] text-muted">
+      <p class="roles-line m-0 font-sans text-[15px] text-muted">
         Studio Lead at <a href="https://noda.tokyo" target="_blank" rel="noopener" class="text-ink border-b border-border hover:border-ink transition-colors duration-200 no-underline">NODA.Tokyo</a>
         &middot;
         Founder of <a href="https://supein.club" target="_blank" rel="noopener" class="text-ink border-b border-border hover:border-ink transition-colors duration-200 no-underline">supein.club</a>
@@ -70,7 +70,7 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- Client logos -->
-    <section data-reveal style="--reveal-delay:50ms" class="mx-auto max-w-[960px] w-full border-t border-border px-[clamp(20px,5vw,40px)] pt-[clamp(40px,6vw,64px)] pb-[clamp(44px,6vw,72px)]">
+    <section class="mx-auto max-w-[960px] w-full border-t border-border px-[clamp(20px,5vw,40px)] pt-[clamp(40px,6vw,64px)] pb-[clamp(44px,6vw,72px)]">
       <p class="mb-7 font-sans text-xs font-medium uppercase tracking-[0.16em] text-muted">
         Selected clients &amp; institutions
       </p>
@@ -84,22 +84,22 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- 3 Services -->
-    <section data-reveal style="--reveal-delay:50ms" class="mx-auto max-w-[960px] w-full border-t border-border px-[clamp(20px,5vw,40px)] py-[clamp(48px,7vw,88px)]">
+    <section class="mx-auto max-w-[960px] w-full border-t border-border px-[clamp(20px,5vw,40px)] py-[clamp(48px,7vw,88px)]">
       <p class="mb-10 font-sans text-xs font-medium uppercase tracking-[0.16em] text-muted">
         What I do
       </p>
-      <div class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-[clamp(32px,4vw,48px)]">
-        <div class="border-t border-ink pt-[22px]">
+      <div class="services-grid grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-[clamp(32px,4vw,48px)]">
+        <div class="service-card border-t border-ink pt-[22px]">
           <span class="font-sans text-xs font-medium tracking-[0.14em] text-muted">01</span>
           <h3 class="mx-0 mt-3.5 mb-3 font-display font-medium text-[27px] leading-[1.15] tracking-[-0.01em] text-ink">Digital Communication</h3>
           <p class="m-0 font-sans text-[15px] leading-[1.65] text-muted">Strategy, content and platform development for cultural and institutional organizations working between Spain and Japan.</p>
         </div>
-        <div class="border-t border-ink pt-[22px]">
+        <div class="service-card border-t border-ink pt-[22px]">
           <span class="font-sans text-xs font-medium tracking-[0.14em] text-muted">02</span>
           <h3 class="mx-0 mt-3.5 mb-3 font-display font-medium text-[27px] leading-[1.15] tracking-[-0.01em] text-ink">Design &amp; Branding</h3>
           <p class="m-0 font-sans text-[15px] leading-[1.65] text-muted">Visual identity, editorial and digital design. From concept to execution — for clients that need both strategic thinking and craft.</p>
         </div>
-        <div class="border-t border-ink pt-[22px]">
+        <div class="service-card border-t border-ink pt-[22px]">
           <span class="font-sans text-xs font-medium tracking-[0.14em] text-muted">03</span>
           <h3 class="mx-0 mt-3.5 mb-3 font-display font-medium text-[27px] leading-[1.15] tracking-[-0.01em] text-ink">SEO &amp; Content Strategy</h3>
           <p class="m-0 font-sans text-[15px] leading-[1.65] text-muted">Multilingual SEO architecture and content strategy for digital platforms targeting Japanese and Spanish-speaking audiences.</p>
@@ -111,17 +111,23 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- CTA -->
-    <section data-reveal class="mx-auto max-w-[960px] w-full border-t border-border px-[clamp(20px,5vw,40px)] pt-[clamp(64px,9vw,120px)] pb-[clamp(48px,7vw,88px)] text-center">
+    <section class="cta-block mx-auto max-w-[960px] w-full border-t border-border px-[clamp(20px,5vw,40px)] pt-[clamp(64px,9vw,120px)] pb-[clamp(48px,7vw,88px)] text-center">
       <h2 class="m-0 font-display font-medium text-[clamp(38px,6vw,56px)] leading-[1.05] tracking-[-0.02em] text-ink">Let&rsquo;s talk.</h2>
       <p class="mx-auto mt-5 max-w-[44ch] font-sans text-base leading-[1.7] text-muted">
         Available for consulting projects and collaborations between Spain, Japan and Europe.
       </p>
       <a
         href="/contact/"
-        class="mt-8 inline-flex items-center gap-2 rounded-[5px] bg-accent px-[26px] py-3.5 font-sans text-[15px] font-medium text-white no-underline hover:bg-accent-dark active:scale-[0.98] transition-all duration-200"
+        class="btn-primary mt-8 inline-flex items-center gap-2 rounded-[5px] bg-accent px-[26px] py-3.5 font-sans text-[15px] font-medium text-white no-underline hover:bg-accent-dark active:scale-[0.98]"
       >Get in touch&nbsp;&rarr;</a>
     </section>
 
   </main>
   <Footer />
 </BaseLayout>
+
+<script>
+  import { initScrollAnimations, initHoverPolish } from '../scripts/scroll-animations';
+  initScrollAnimations();
+  initHoverPolish();
+</script>
