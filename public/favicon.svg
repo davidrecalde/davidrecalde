@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" fill="#FFFFFF"/>
-  <text x="16" y="21" font-family="Inter, sans-serif" font-size="14" font-weight="700"
-        text-anchor="middle" fill="#111111">DR</text>
+  <rect width="32" height="32" fill="#0A0A0A"/>
+  <text x="16" y="22" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800"
+        text-anchor="middle" fill="#FFFFFF" letter-spacing="-0.5">DR</text>
 </svg>

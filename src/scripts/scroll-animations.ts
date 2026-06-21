@@ -43,34 +43,6 @@ export function initScrollAnimations() {
   });
 }
 
-export function initCareerTimeline() {
-  if (prefersReducedMotion) return;
-
-  const track = document.querySelector('.career-track');
-  const fill = document.getElementById('career-line-fill');
-  if (!track || !fill) return;
-
-  gsap.to(fill, {
-    height: '100%',
-    ease: 'none',
-    scrollTrigger: {
-      trigger: track,
-      start: 'top 70%',
-      end: 'bottom 60%',
-      scrub: 0.6,
-    },
-  });
-
-  document.querySelectorAll('.career-entry').forEach((entry) => {
-    ScrollTrigger.create({
-      trigger: entry,
-      start: 'top 75%',
-      onEnter: () => entry.classList.add('is-active'),
-      onLeaveBack: () => entry.classList.remove('is-active'),
-    });
-  });
-}
-
 export function initCasesAnimation() {
   if (prefersReducedMotion) return;
 
