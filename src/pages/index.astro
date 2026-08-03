@@ -5,94 +5,77 @@ import Footer from '../components/Footer.astro';
 ---
 <BaseLayout
   title="David Recalde — Cultural Industries & Communication Consultant, Tokyo"
-  description="Cultural industries and communication consultant based in Tokyo. Founder of NODA.Tokyo and softpower.school. Spain–Japan–Europe digital communication and cultural strategy."
+  description="Cultural industries and communication consultant based in Tokyo. Founder of NODA.Tokyo and softpower.school. Spain–Japan–Europe cultural strategy and institutional communication."
 >
   <Nav currentPage="home" />
   <main id="main-content" class="flex-1">
 
-    <!-- Hero -->
-    <section class="hero-compact">
-      <div class="hero-lines-bg" aria-hidden="true"></div>
-      <h2 class="hero-tagline-xl">Design, Build, Grow.</h2>
-    </section>
-
-    <hr class="section-divider">
-
-    <!-- Name + role -->
-    <section class="name-section">
-      <div class="mx-auto max-w-[860px] w-full px-[clamp(20px,5vw,40px)] text-center">
-        <h1 class="name-h1">David Recalde <span class="name-divider">|</span> Cultural Industries &amp; Communication Consultant</h1>
-        <p class="name-context">Based in Tokyo. Working at the intersection of cultural policy, research and institutional communication across Spain, Japan and Europe.</p>
-        <p class="roles-line">
-          Studio Lead at <a href="https://noda.tokyo" target="_blank" rel="noopener">NODA.Tokyo</a>
-          &middot;
-          Founder of <a href="https://supein.club" target="_blank" rel="noopener">supein.club</a>
-          &middot;
-          Founder of <a href="https://www.softpower.school" target="_blank" rel="noopener">softpower.school</a>
-        </p>
-        <a
-          href="/contact/"
-          class="btn-primary inline-flex items-center gap-2 rounded-[5px] bg-accent px-[26px] py-3.5 font-sans text-[15px] font-medium text-white no-underline hover:bg-accent-dark active:scale-[0.98] relative z-1"
-        >Get in touch&nbsp;&rarr;</a>
-      </div>
-    </section>
-
-    <hr class="section-divider">
-
-    <!-- What I do -->
-    <section class="mx-auto max-w-[860px] w-full px-[clamp(20px,5vw,40px)] py-[clamp(40px,6vw,72px)]">
-      <p class="section-label"><span class="section-symbol">&sect;</span> 01&nbsp;&nbsp;What I do</p>
-      <p class="section-intro">My practice sits at the intersection of cultural industries strategy, institutional communication and design research.</p>
-      <div class="services-grid grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-[clamp(28px,4vw,44px)]">
-        <div class="service-card border-t border-ink pt-[20px]">
-          <span class="font-sans text-xs font-medium tracking-[0.14em] text-muted">01</span>
-          <h3 class="mx-0 mt-3 mb-2.5 font-display font-medium text-[25px] leading-[1.15] tracking-[-0.01em] text-ink">Cultural Industries Strategy</h3>
-          <p class="m-0 font-sans text-[15px] leading-[1.65] text-muted">Advisory for organizations operating at the intersection of cultural policy, creative industries and Japan–Europe institutional cooperation.</p>
+    <!-- ═══════════════════════════════════════
+         MOMENT 1 — IDENTITY
+         Full-height opening, name + title + Tokyo + CTA
+    ════════════════════════════════════════════ -->
+    <section class="moment-identity">
+      <div class="wrap identity-inner">
+        <div class="identity-text">
+          <h1 class="identity-name">David Recalde</h1>
+          <p class="identity-title">Cultural Industries &amp;<br>Communication Consultant</p>
         </div>
-        <div class="service-card border-t border-ink pt-[20px]">
-          <span class="font-sans text-xs font-medium tracking-[0.14em] text-muted">02</span>
-          <h3 class="mx-0 mt-3 mb-2.5 font-display font-medium text-[25px] leading-[1.15] tracking-[-0.01em] text-ink">Digital Communication &amp; Platforms</h3>
-          <p class="m-0 font-sans text-[15px] leading-[1.65] text-muted">Content strategy, brand communication and digital platforms for cultural institutions, public agencies and creative organizations.</p>
-        </div>
-        <div class="service-card border-t border-ink pt-[20px]">
-          <span class="font-sans text-xs font-medium tracking-[0.14em] text-muted">03</span>
-          <h3 class="mx-0 mt-3 mb-2.5 font-display font-medium text-[25px] leading-[1.15] tracking-[-0.01em] text-ink">Design Research &amp; Methodology</h3>
-          <p class="m-0 font-sans text-[15px] leading-[1.65] text-muted">Research through Design applied to cross-cultural communication, soft power mechanisms and cultural diplomacy. Background in industrial and product design methodology.</p>
+        <div class="identity-footer">
+          <span class="identity-location">Tokyo</span>
+          <a href="/contact/" class="btn-primary">Get in touch&nbsp;&rarr;</a>
         </div>
       </div>
     </section>
 
-    <hr class="section-divider">
+    <!-- ═══════════════════════════════════════
+         MOMENT 2 — FIELD OF WORK
+         One large statement + softpower.school link
+    ════════════════════════════════════════════ -->
+    <section class="moment-field section border-top">
+      <div class="wrap">
+        <p class="field-statement">I work at the intersection of cultural policy, research and institutional communication across Spain, Japan and Europe.</p>
+        <a href="https://www.softpower.school" target="_blank" rel="noopener" class="field-link">softpower.school&nbsp;&rarr;</a>
+      </div>
+    </section>
 
-    <!-- Research & Practice -->
-    <section class="research-section mx-auto max-w-[860px] w-full px-[clamp(20px,5vw,40px)]">
-      <p class="section-label"><span class="section-symbol">&sect;</span> 02&nbsp;&nbsp;Research &amp; Practice</p>
-      <div class="research-block">
-        <div class="research-text">
-          <p class="research-statement">Beyond consulting, I develop research on the mechanisms of cultural soft power in Japan&ndash;Europe cooperation. This work connects institutional communication practice with a broader inquiry into how cultural industries operate as instruments of influence.</p>
-          <a href="https://www.softpower.school" target="_blank" rel="noopener" class="research-link">softpower.school&nbsp;&rarr;</a>
-        </div>
-        <div class="research-meta">
-          <p class="research-field">Field</p>
-          <p class="research-field-value">Cultural Industries &middot; Soft Power &middot; Japan&ndash;Europe</p>
-          <p class="research-field" style="margin-top:16px">Practice</p>
-          <p class="research-field-value">Research through Design</p>
+    <!-- ═══════════════════════════════════════
+         MOMENT 3 — CREDIBILITY
+         Institution logos only, no description
+    ════════════════════════════════════════════ -->
+    <section class="moment-institutions section border-top">
+      <div class="wrap">
+        <p class="section-label"><span class="section-symbol">&sect;</span> Institutions</p>
+        <div class="logo-row" data-reveal>
+          <img src="/images/logos/instituto-cervantes.svg" alt="Instituto Cervantes Tokyo" loading="lazy" />
+          <img src="/images/logos/embassy-spain.svg" alt="Embassy of Spain in Japan" loading="lazy" />
+          <img src="/images/logos/jica.svg" alt="JICA — Japan International Cooperation Agency" loading="lazy" />
+          <img src="/images/logos/icex.svg" alt="ICEX — Spain Trade and Investment" loading="lazy" />
+          <img src="/images/logos/utokyo.svg" alt="University of Tokyo" loading="lazy" />
+          <img src="/images/logos/nhk.svg" alt="NHK" loading="lazy" />
         </div>
       </div>
     </section>
 
-    <hr class="section-divider--light">
-
-    <!-- Client logos -->
-    <section class="mx-auto max-w-[860px] w-full px-[clamp(20px,5vw,40px)] pt-[clamp(32px,5vw,52px)] pb-[clamp(40px,6vw,64px)]">
-      <p class="section-label"><span class="section-symbol">&sect;</span> 03&nbsp;&nbsp;Selected clients &amp; institutions</p>
-      <div class="logo-row">
-        <img src="/images/logos/instituto-cervantes.svg" alt="Instituto Cervantes Tokyo" loading="lazy" />
-        <img src="/images/logos/embassy-spain.svg" alt="Embassy of Spain in Japan" loading="lazy" />
-        <img src="/images/logos/icex.svg" alt="ICEX — Spain Trade and Investment" loading="lazy" />
-        <img src="/images/logos/jica.svg" alt="JICA — Japan International Cooperation Agency" loading="lazy" />
-        <img src="/images/logos/utokyo.svg" alt="University of Tokyo" loading="lazy" />
-        <img src="/images/logos/nhk.svg" alt="NHK" loading="lazy" />
+    <!-- ═══════════════════════════════════════
+         MOMENT 4 — NEXT STEP
+         Three editorial navigation links
+    ════════════════════════════════════════════ -->
+    <section class="moment-nav section border-top">
+      <div class="wrap">
+        <nav class="editorial-nav">
+          <a href="/about/" class="editorial-nav-link">
+            <span class="editorial-nav-label">About</span>
+            <span class="editorial-nav-arrow">&rarr;</span>
+          </a>
+          <a href="/work/" class="editorial-nav-link">
+            <span class="editorial-nav-label">Work</span>
+            <span class="editorial-nav-arrow">&rarr;</span>
+          </a>
+          <a href="/contact/" class="editorial-nav-link">
+            <span class="editorial-nav-label">Contact</span>
+            <span class="editorial-nav-arrow">&rarr;</span>
+          </a>
+        </nav>
       </div>
     </section>
 
@@ -101,7 +84,7 @@ import Footer from '../components/Footer.astro';
 </BaseLayout>
 
 <script>
-  import { initScrollAnimations, initHoverPolish } from '../scripts/scroll-animations';
-  initScrollAnimations();
+  import { initHomeAnimations, initHoverPolish } from '../scripts/scroll-animations';
+  initHomeAnimations();
   initHoverPolish();
 </script>

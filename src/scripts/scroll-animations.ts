@@ -5,41 +5,29 @@ gsap.registerPlugin(ScrollTrigger);
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-export function initScrollAnimations() {
+export function initHomeAnimations() {
   if (prefersReducedMotion) return;
 
-  gsap.from('.hero-tagline-xl', { opacity: 0, y: 24, duration: 0.8, ease: 'power3.out' });
+  // Moment 1 — identity entrance on load
+  const tl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 0.7 } });
+  tl.from('.identity-name',     { opacity: 0, y: 20, duration: 0.8 })
+    .from('.identity-title',    { opacity: 0, y: 14 }, '-=0.5')
+    .from('.identity-footer',   { opacity: 0, y: 10, duration: 0.5 }, '-=0.3');
 
-  const introTl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 0.6 }, delay: 0.3 });
-  introTl
-    .from('.name-h1', { opacity: 0, y: 14 })
-    .from('.name-section .btn-primary', { opacity: 0, y: 10 }, '-=0.3');
-
-  gsap.from('.service-card', {
-    scrollTrigger: {
-      trigger: '.services-grid',
-      start: 'top 80%',
-      toggleActions: 'play none none none',
-    },
-    opacity: 0,
-    y: 28,
-    scale: 0.97,
-    duration: 0.6,
-    ease: 'power2.out',
-    stagger: 0.15,
+  // Moment 2 — field statement on scroll
+  gsap.from('.field-statement', {
+    scrollTrigger: { trigger: '.moment-field', start: 'top 80%', toggleActions: 'play none none none' },
+    opacity: 0, y: 24, duration: 0.7, ease: 'power2.out',
+  });
+  gsap.from('.field-link', {
+    scrollTrigger: { trigger: '.field-link', start: 'top 85%', toggleActions: 'play none none none' },
+    opacity: 0, y: 10, duration: 0.5, ease: 'power2.out', delay: 0.2,
   });
 
-  gsap.from('.logo-row img', {
-    scrollTrigger: {
-      trigger: '.logo-row',
-      start: 'top 85%',
-      toggleActions: 'play none none none',
-    },
-    opacity: 0,
-    scale: 0.92,
-    duration: 0.5,
-    ease: 'power2.out',
-    stagger: 0.08,
+  // Moment 4 — editorial nav links
+  gsap.from('.editorial-nav-link', {
+    scrollTrigger: { trigger: '.editorial-nav', start: 'top 85%', toggleActions: 'play none none none' },
+    opacity: 0, y: 12, duration: 0.5, ease: 'power2.out', stagger: 0.1,
   });
 }
 
