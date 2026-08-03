@@ -161,29 +161,8 @@
 
     /* ── About photo composition ── */
     .about-photo-composition {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
         max-width: 480px;
         width: 100%;
-    }
-    .apc-row {
-        display: flex;
-        gap: 12px;
-    }
-    .apc-row--top {
-        padding-left: 30%;
-    }
-    .apc-cell-sm {
-        flex: 1;
-        aspect-ratio: 4 / 3;
-        background: #F4F4F4;
-        border-radius: 2px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-        max-width: 110px;
-    }
-    .apc-cell--active {
-        background: var(--color-ink);
     }
     .apc-photo {
         width: 100%;
@@ -195,12 +174,6 @@
         height: auto;
         object-fit: contain;
         display: block;
-    }
-    .apc-row--bottom {
-        padding-right: 20%;
-    }
-    @media (max-width: 640px) {
-        .apc-row--top, .apc-row--bottom { display: none; }
     }
 
     /* ── Work/Cases accordion ── */
