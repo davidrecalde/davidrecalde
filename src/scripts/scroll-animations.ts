@@ -10,8 +10,7 @@ export function initHomeAnimations() {
 
   // Moment 1 — identity entrance on load
   const tl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 0.7 } });
-  tl.from('.identity-name',     { opacity: 0, y: 20, duration: 0.8 })
-    .from('.identity-title',    { opacity: 0, y: 14 }, '-=0.5')
+  tl.from('.identity-title',    { opacity: 0, y: 20, duration: 0.8 })
     .from('.identity-footer',   { opacity: 0, y: 10, duration: 0.5 }, '-=0.3');
 
   // Moment 2 — field statement on scroll
