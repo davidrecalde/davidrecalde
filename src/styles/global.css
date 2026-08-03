@@ -7,6 +7,7 @@
     --color-border:      #EAEAEA;
     --color-accent:      #C8102E;
     --color-accent-dark: #A50D24;
+    --color-academic:    #1A2B4A;
 
     --font-display: 'Cormorant Garamond', Georgia, serif;
     --font-sans:    'Geist Sans', 'Geist', 'Helvetica Neue', system-ui, sans-serif;
@@ -16,6 +17,10 @@
     body {
         -webkit-font-smoothing: antialiased;
         text-rendering: optimizeLegibility;
+        line-height: 1.85;
+    }
+    p {
+        max-width: 68ch;
     }
     ::placeholder {
         color: #B3B3B3;
@@ -112,7 +117,7 @@
         position: relative;
         z-index: 1;
         font-family: var(--font-display);
-        font-weight: 500;
+        font-weight: 400;
         font-size: clamp(48px, 10vw, 130px);
         line-height: 0.95;
         letter-spacing: -0.02em;
@@ -174,6 +179,114 @@
     .name-section .btn-primary {
         position: relative;
         z-index: 1;
+    }
+    .name-context {
+        font-family: var(--font-sans);
+        font-size: 15px;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.65);
+        margin: 0 auto 20px;
+        max-width: 52ch;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* ── Section dividers ── */
+    .section-divider {
+        border: none;
+        border-top: 1px solid var(--color-ink);
+        margin: 0;
+        width: 100%;
+    }
+    .section-divider--light {
+        border: none;
+        border-top: 1px solid var(--color-border);
+        margin: 0;
+        width: 100%;
+    }
+
+    /* ── § section numbering ── */
+    .section-label {
+        font-family: var(--font-sans);
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--color-muted);
+        margin: 0 0 16px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .section-symbol {
+        color: var(--color-academic);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0;
+        text-transform: none;
+    }
+
+    /* ── "What I do" intro sentence ── */
+    .section-intro {
+        font-size: 17px;
+        line-height: 1.75;
+        color: var(--color-muted);
+        margin: 0 0 clamp(32px, 5vw, 48px);
+        max-width: 56ch;
+    }
+
+    /* ── Research & Practice section ── */
+    .research-section {
+        padding-top: clamp(40px, 6vw, 64px);
+        padding-bottom: clamp(40px, 6vw, 64px);
+    }
+    .research-block {
+        display: flex;
+        flex-wrap: wrap;
+        gap: clamp(32px, 5vw, 64px);
+        align-items: flex-start;
+        margin-top: 28px;
+    }
+    .research-text {
+        flex: 1 1 340px;
+        min-width: 260px;
+    }
+    .research-statement {
+        font-size: 17px;
+        line-height: 1.8;
+        color: var(--color-ink);
+        margin: 0 0 20px;
+    }
+    .research-link {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--color-academic);
+        letter-spacing: 0.04em;
+        border-bottom: 1px solid var(--color-academic);
+        padding-bottom: 2px;
+        transition: opacity 0.2s;
+    }
+    .research-link:hover {
+        opacity: 0.65;
+    }
+    .research-meta {
+        flex: 0 1 200px;
+        min-width: 160px;
+        padding-top: 4px;
+    }
+    .research-field {
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--color-muted);
+        margin: 0 0 4px;
+    }
+    .research-field-value {
+        font-size: 14px;
+        color: var(--color-ink);
+        margin: 0;
+        line-height: 1.5;
     }
 
     /* ── About photo composition ── */
