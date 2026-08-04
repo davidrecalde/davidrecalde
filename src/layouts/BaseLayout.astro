@@ -34,20 +34,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 <body class="bg-white text-ink font-sans">
   <a href="#main-content" class="skip-link">Skip to content</a>
-  <div class="ambient-glow" aria-hidden="true"></div>
   <div class="relative flex flex-col min-h-screen">
     <slot />
   </div>
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
-  </script>
 </body>
 </html>
