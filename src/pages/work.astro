@@ -4,9 +4,9 @@ import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 
 const services = [
-  { title: 'Cultural Industries Strategy', color: '#8B1A4A', desc: 'Strategic advisory on cultural policy, institutional positioning and cross-border cultural collaboration.' },
-  { title: 'Digital Communication & Platforms', color: '#C8102E', desc: 'Communication strategy, content and platform development for organisations operating in the cultural sector.' },
-  { title: 'Design Research & Methodology', color: '#1A2B4A', desc: 'Research through Design applied to cultural and institutional contexts — from inquiry to implementation.' },
+  { title: 'Culture', color: '#8B1A4A', desc: 'Understanding how cultural industries operate as instruments of influence — and helping organisations navigate that landscape strategically.' },
+  { title: 'Research', color: '#1A2B4A', desc: 'Applying design as a method for inquiry — building knowledge through practice at the intersection of cultural policy and communication.' },
+  { title: 'Communication', color: '#C8102E', desc: 'Designing messages, identities and digital systems for institutions and organisations that need to communicate with clarity and purpose.' },
 ];
 
 const projects = [
@@ -14,10 +14,10 @@ const projects = [
   { name: 'Embassy of Spain in Japan', sector: 'Government', country: 'Japan', services: 'Audiovisual & Design', description: 'Promotional materials, audiovisual content and institutional design for cultural exhibitions and events.' },
   { name: 'JICA', sector: 'Government Agency', country: 'Japan', services: 'Language Programs', description: "Designed and delivered Spanish language programs for Japanese professionals at Japan's official cooperation agency." },
   { name: 'ICEX', sector: 'Trade & Investment', country: 'Japan', services: 'Institutional Comms', description: "Institutional communication and digital strategy for Spain's trade promotion in Japan." },
-  { name: 'University of Tokyo', sector: 'Academic', country: 'Japan', services: 'Graphic & Digital', description: 'Graphic and digital materials for scientific publications of the Faculty of Engineering.' },
-  { name: 'NODA', sector: 'Studio', country: 'Japan', services: 'Brand & Comms', description: 'Lead brand and communication projects combining strategy, branding and digital design.' },
-  { name: 'softpower.school', sector: 'Research & Education', country: 'Japan', services: 'Research Platform', description: 'Platform for the analysis of cultural industries as soft power instruments.' },
-  { name: 'Club Español en Japón スペイン倶楽部', sector: 'Own Platform', country: 'Japan', services: 'Media & SEO', description: 'Japanese-language cultural media platform about Spain — brand, SEO, editorial strategy.' },
+  { name: 'University of Tokyo', sector: 'Academic', country: 'Japan', services: 'Graphic & Digital Materials', description: 'Graphic and digital materials for scientific publications of the Faculty of Engineering.' },
+  { name: 'NODA', sector: 'Studio', country: 'Japan', services: 'Brand & Comms (Founder)', description: 'Lead brand and communication projects combining strategy, branding and digital design.' },
+  { name: 'softpower.school', sector: 'Research & Education', country: 'Japan', services: 'Research Platform (Founder)', description: 'Platform for the analysis of cultural industries as soft power instruments.' },
+  { name: 'Club Español en Japón スペイン倶楽部', sector: 'Own Platform', country: 'Japan', services: 'Media & SEO (Founder)', description: 'Japanese-language cultural media platform about Spain — brand, SEO, editorial strategy.' },
 ];
 ---
 <BaseLayout
@@ -46,16 +46,23 @@ const projects = [
           </div>
         ))}
       </div>
-      <svg viewBox="0 0 700 380" width="100%" style="display:block;max-width:600px;margin:0 auto;overflow:visible">
-        <circle cx="230" cy="150" r="105" fill="#8B1A4A" opacity="0.5"/>
-        <circle cx="430" cy="150" r="105" fill="#C8102E" opacity="0.5"/>
-        <circle cx="330" cy="255" r="105" fill="#1A2B4A" opacity="0.5"/>
-        <text x="130" y="34" font-family="Inter,sans-serif" font-size="14" font-weight="600" fill="#111">Cultural Industries Strategy</text>
-        <text x="500" y="34" text-anchor="end" font-family="Inter,sans-serif" font-size="14" font-weight="600" fill="#111">Digital Communication</text>
-        <text x="500" y="52" text-anchor="end" font-family="Inter,sans-serif" font-size="14" font-weight="600" fill="#111">&amp; Platforms</text>
-        <text x="330" y="356" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="600" fill="#111">Design Research &amp; Methodology</text>
-        <text x="330" y="180" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#fff">Design</text>
-      </svg>
+      <div style="background:#F0EDE6;padding:clamp(24px,4vw,40px);border-radius:4px">
+        <svg viewBox="0 0 700 500" width="100%" style="display:block;max-width:620px;margin:0 auto;overflow:visible">
+          <circle cx="350" cy="170" r="160" fill="#8B1A4A" opacity="0.6"/>
+          <circle cx="428" cy="305" r="160" fill="#C8102E" opacity="0.6"/>
+          <circle cx="272" cy="305" r="160" fill="#1A2B4A" opacity="0.6"/>
+          <text x="350" y="90" text-anchor="middle" font-family="Inter,sans-serif" font-size="19" font-weight="700" fill="#fff">Culture</text>
+          <text x="350" y="112" text-anchor="middle" font-family="Inter,sans-serif" font-size="11.5" fill="#fff" opacity="0.9">Understanding how cultural industries</text>
+          <text x="350" y="128" text-anchor="middle" font-family="Inter,sans-serif" font-size="11.5" fill="#fff" opacity="0.9">operate as influence</text>
+          <text x="476" y="358" text-anchor="middle" font-family="Inter,sans-serif" font-size="19" font-weight="700" fill="#fff">Research</text>
+          <text x="476" y="380" text-anchor="middle" font-family="Inter,sans-serif" font-size="11.5" fill="#fff" opacity="0.9">Design as a method for inquiry</text>
+          <text x="476" y="396" text-anchor="middle" font-family="Inter,sans-serif" font-size="11.5" fill="#fff" opacity="0.9">and knowledge</text>
+          <text x="224" y="358" text-anchor="middle" font-family="Inter,sans-serif" font-size="19" font-weight="700" fill="#fff">Communication</text>
+          <text x="224" y="380" text-anchor="middle" font-family="Inter,sans-serif" font-size="11.5" fill="#fff" opacity="0.9">Shaping messages, identities</text>
+          <text x="224" y="396" text-anchor="middle" font-family="Inter,sans-serif" font-size="11.5" fill="#fff" opacity="0.9">and institutions</text>
+          <text x="350" y="266" text-anchor="middle" font-family="Inter,sans-serif" font-size="20" font-weight="700" fill="#fff">DESIGN</text>
+        </svg>
+      </div>
     </section>
 
     <!-- §02 Research & Practice (black) -->
@@ -67,7 +74,7 @@ const projects = [
             <p style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(22px,3vw,28px);line-height:1.55;color:#fff;margin:0 0 26px;max-width:44ch">
               Beyond consulting, I develop research on the mechanisms of cultural soft power in international cooperation. This work connects institutional communication practice with a broader inquiry into how cultural industries operate as instruments of influence.
             </p>
-            <div style="display:flex;gap:clamp(24px,4vw,48px);flex-wrap:wrap">
+            <div style="display:flex;gap:clamp(24px,4vw,48px);flex-wrap:wrap;margin-bottom:24px">
               <div>
                 <p style="font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#8A8A85;margin:0 0 8px">Field</p>
                 <p style="font-family:'Inter',sans-serif;font-size:15px;color:#fff;margin:0">Cultural Industries &middot; Soft Power &middot; Cross-cultural Communication</p>
@@ -78,25 +85,24 @@ const projects = [
               </div>
             </div>
           </div>
-          <div style="flex:0 1 260px;min-width:220px">
-            <svg viewBox="0 0 380 320" width="100%" style="display:block;overflow:visible">
-              <circle cx="190" cy="160" r="95" fill="none" stroke="#2A2A2A" stroke-width="1.5"/>
-              <path d="M190 65 A95 95 0 0 1 285 160" fill="none" stroke="#C8102E" stroke-width="2.5"/>
-              <path d="M285 160 A95 95 0 0 1 190 255" fill="none" stroke="#E8A020" stroke-width="2.5"/>
-              <path d="M190 255 A95 95 0 0 1 95 160" fill="none" stroke="#2D6A4F" stroke-width="2.5"/>
-              <path d="M95 160 A95 95 0 0 1 190 65" fill="none" stroke="#8B1A4A" stroke-width="2.5"/>
-              <circle cx="190" cy="65" r="6" fill="#C8102E"/>
-              <circle cx="285" cy="160" r="6" fill="#E8A020"/>
-              <circle cx="190" cy="255" r="6" fill="#2D6A4F"/>
-              <circle cx="95" cy="160" r="6" fill="#8B1A4A"/>
-              <text x="190" y="44" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#fff">RESEARCH</text>
-              <text x="190" y="57" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.6)">Formulating the question</text>
-              <text x="305" y="153" text-anchor="start" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#fff">INSIGHT</text>
-              <text x="305" y="166" text-anchor="start" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.6)">Finding meaning</text>
-              <text x="190" y="280" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#fff">PRACTICE</text>
-              <text x="190" y="293" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.6)">Applying through design</text>
-              <text x="75" y="153" text-anchor="end" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#fff">OBSERVATION</text>
-              <text x="75" y="166" text-anchor="end" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.6)">Gathering evidence</text>
+          <div style="flex:0 1 380px;min-width:300px;margin:0 auto">
+            <svg viewBox="0 0 380 330" width="100%" style="display:block;margin:0 auto;overflow:visible">
+              <path d="M190 65 A95 95 0 0 1 285 160" fill="none" stroke="#C8102E" stroke-width="1.5"/>
+              <path d="M285 160 A95 95 0 0 1 190 255" fill="none" stroke="#8B1A4A" stroke-width="1.5"/>
+              <path d="M190 255 A95 95 0 0 1 95 160" fill="none" stroke="#E8A020" stroke-width="1.5"/>
+              <path d="M95 160 A95 95 0 0 1 190 65" fill="none" stroke="#2D6A4F" stroke-width="1.5"/>
+              <circle cx="190" cy="65" r="10" fill="#C8102E"/>
+              <circle cx="285" cy="160" r="10" fill="#8B1A4A"/>
+              <circle cx="190" cy="255" r="10" fill="#E8A020"/>
+              <circle cx="95" cy="160" r="10" fill="#2D6A4F"/>
+              <text x="190" y="34" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="600" letter-spacing="0.06em" fill="#fff">1. RESEARCH</text>
+              <text x="190" y="50" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#fff" opacity="0.75">Formulating the question</text>
+              <text x="304" y="152" text-anchor="start" font-family="Inter,sans-serif" font-size="15" font-weight="600" letter-spacing="0.06em" fill="#fff">2. OBSERVATION</text>
+              <text x="304" y="170" text-anchor="start" font-family="Inter,sans-serif" font-size="11" fill="#fff" opacity="0.75">Gathering evidence</text>
+              <text x="190" y="292" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="600" letter-spacing="0.06em" fill="#fff">3. INSIGHT</text>
+              <text x="190" y="308" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#fff" opacity="0.75">Finding meaning</text>
+              <text x="76" y="152" text-anchor="end" font-family="Inter,sans-serif" font-size="15" font-weight="600" letter-spacing="0.06em" fill="#fff">4. PRACTICE</text>
+              <text x="76" y="170" text-anchor="end" font-family="Inter,sans-serif" font-size="11" fill="#fff" opacity="0.75">Applying through design</text>
             </svg>
           </div>
         </div>
