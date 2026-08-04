@@ -1,6 +1,3 @@
-/experience/   /about/   301
-/experience    /about/   301
-/services/     /         301
-/services      /         301
-/cases/        /work/    301
-/cases         /work/    301
+/services/    /work/    301
+/experience/  /about/   301
+/cases/       /work/    301

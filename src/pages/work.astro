@@ -1,152 +1,132 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Nav from '../components/Nav.astro';
+import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 
-const items = [
-  {
-    name: 'Instituto Cervantes Tokyo',
-    sector: 'Cultural Institution',
-    country: 'Japan',
-    services: 'Communication Advisor',
-    desc: "Led marketing, social media, events and content strategy for Spain’s official cultural institution in Japan over four years. Coordinated newsletters, advertising campaigns and team management, working closely with the Embassy of Spain and institutional partners.",
-  },
-  {
-    name: 'Embassy of Spain in Japan',
-    sector: 'Government',
-    country: 'Japan',
-    services: 'Digital Content',
-    desc: 'Produced promotional materials, audiovisual content and institutional design for cultural exhibitions, conferences and events at the Embassy premises, as a freelance collaborator to the cultural section.',
-  },
-  {
-    name: 'JICA',
-    sector: 'Government Agency',
-    country: 'Japan',
-    services: 'Language Instructor',
-    desc: 'Designed and delivered Spanish language programs for Japanese professionals. Defined course content, created teaching materials, and developed evaluation methods adapted to an institutional cooperation context.',
-  },
-  {
-    name: 'ICEX',
-    sector: 'Trade & Investment',
-    country: 'Japan',
-    services: 'Collaboration',
-    desc: "Collaborated on institutional communication and digital strategy projects supporting Spain’s trade and investment promotion in the Japanese market.",
-  },
-  {
-    name: 'University of Tokyo',
-    sector: 'Academic',
-    country: 'Japan',
-    services: 'Graphic Design',
-    desc: "Developed graphic and digital materials supporting scientific publications for the Faculty of Engineering — visual communication for academic and research contexts.",
-  },
-  {
-    name: 'NODA.Tokyo',
-    sector: 'Studio',
-    country: 'Japan',
-    services: 'Studio Lead',
-    desc: 'Lead brand and communication projects as Studio Lead, combining strategy, branding and digital design for international clients and public institutions operating in Japan.',
-  },
-  {
-    name: 'softpower.school',
-    sector: 'Research & Education',
-    country: 'Japan',
-    services: 'Founder & Researcher',
-    desc: "Platform dedicated to the analysis of Japanese cultural industries — videogames, anime, music, film and design — for professionals and researchers operating in the Spain–Europe–Japan space. Covers the economic, institutional and strategic dimensions of Japan's cultural sector as a global soft power instrument.",
-  },
-  {
-    name: 'supein.club',
-    sector: 'Own Platform',
-    country: 'Japan',
-    services: 'Founder',
-    desc: "Founded and built a Japanese-language cultural media platform about Spain from the ground up — brand, SEO architecture, editorial strategy and community, covering gastronomy, travel and culture.",
-  },
+const services = [
+  { title: 'Cultural Industries Strategy', color: '#8B1A4A', desc: 'Strategic advisory on cultural policy, institutional positioning and cross-border cultural collaboration.' },
+  { title: 'Digital Communication & Platforms', color: '#C8102E', desc: 'Communication strategy, content and platform development for organisations operating in the cultural sector.' },
+  { title: 'Design Research & Methodology', color: '#1A2B4A', desc: 'Research through Design applied to cultural and institutional contexts — from inquiry to implementation.' },
+];
+
+const projects = [
+  { name: 'Instituto Cervantes Tokyo', sector: 'Cultural Institution', country: 'Japan', services: 'Marketing & Events', description: "Led marketing, social media, events and content strategy for Spain's official cultural institution in Japan over four years." },
+  { name: 'Embassy of Spain in Japan', sector: 'Government', country: 'Japan', services: 'Audiovisual & Design', description: 'Promotional materials, audiovisual content and institutional design for cultural exhibitions and events.' },
+  { name: 'JICA', sector: 'Government Agency', country: 'Japan', services: 'Language Programs', description: "Designed and delivered Spanish language programs for Japanese professionals at Japan's official cooperation agency." },
+  { name: 'ICEX', sector: 'Trade & Investment', country: 'Japan', services: 'Institutional Comms', description: "Institutional communication and digital strategy for Spain's trade promotion in Japan." },
+  { name: 'University of Tokyo', sector: 'Academic', country: 'Japan', services: 'Graphic & Digital', description: 'Graphic and digital materials for scientific publications of the Faculty of Engineering.' },
+  { name: 'NODA', sector: 'Studio', country: 'Japan', services: 'Brand & Comms', description: 'Lead brand and communication projects combining strategy, branding and digital design.' },
+  { name: 'softpower.school', sector: 'Research & Education', country: 'Japan', services: 'Research Platform', description: 'Platform for the analysis of cultural industries as soft power instruments.' },
+  { name: 'Club Español en Japón スペイン倶楽部', sector: 'Own Platform', country: 'Japan', services: 'Media & SEO', description: 'Japanese-language cultural media platform about Spain — brand, SEO, editorial strategy.' },
 ];
 ---
 <BaseLayout
   title="Work — David Recalde"
-  description="Institutions and organizations I've worked with across design, communication and digital strategy between Spain, Japan and Europe."
+  description="Services, research and institutional collaborations: cultural industries strategy, digital communication and design research."
 >
-  <Nav currentPage="work" />
-  <main id="main-content" class="flex-1">
+  <Navigation />
+  <main class="fade-up">
 
-    <!-- Page header -->
-    <section class="hero-enter mx-auto max-w-[860px] w-full px-[clamp(20px,5vw,40px)] pt-[clamp(48px,8vw,96px)] pb-[clamp(36px,5vw,56px)]">
-      <h1 class="m-0 font-display font-medium text-[clamp(44px,7vw,72px)] leading-none tracking-[-0.02em] text-ink">Projects and initiatives</h1>
-      <p class="mt-7 max-w-[52ch] font-sans text-[17px] leading-[1.7] text-muted">
-        Institutions and organizations I&rsquo;ve worked with or collaborated on, across design, communication and digital strategy.
-      </p>
+    <!-- Header -->
+    <section class="wrap" style="padding-top:clamp(48px,8vw,80px);padding-bottom:clamp(8px,2vw,16px)">
+      <p class="sec-label">Work</p>
+      <h1 style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(42px,7vw,64px);line-height:1.05;letter-spacing:-0.01em;color:#111111;margin:0 0 24px">
+        Services, research and collaboration
+      </h1>
     </section>
 
-    <hr class="section-divider--light">
-
-    <!-- Services section -->
-    <section data-reveal class="section wrap">
-      <p class="section-label"><span class="section-symbol">&sect;</span> 01&nbsp;&nbsp;What I do</p>
-      <p class="section-intro">My practice sits at the intersection of cultural industries strategy, institutional communication and design research.</p>
-      <div class="services-grid" style="margin-top: clamp(32px,5vw,48px)">
-        <div class="service-card">
-          <span class="service-num">01</span>
-          <h3 class="service-title">Cultural Industries Strategy</h3>
-          <p class="service-desc">Advisory for organizations operating at the intersection of cultural policy, creative industries and Japan&ndash;Europe institutional cooperation.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-num">02</span>
-          <h3 class="service-title">Digital Communication &amp; Platforms</h3>
-          <p class="service-desc">Content strategy, brand communication and digital platforms for cultural institutions, public agencies and creative organizations.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-num">03</span>
-          <h3 class="service-title">Design Research &amp; Methodology</h3>
-          <p class="service-desc">Research through Design applied to cross-cultural communication, soft power mechanisms and cultural diplomacy. Background in industrial and product design methodology.</p>
-        </div>
-      </div>
-    </section>
-
-    <hr class="section-divider">
-
-    <!-- Research & Practice section -->
-    <section data-reveal class="section research-section wrap">
-      <p class="section-label"><span class="section-symbol">&sect;</span> 02&nbsp;&nbsp;Research &amp; Practice</p>
-      <div class="research-block">
-        <div class="research-text">
-          <p class="research-statement">Beyond consulting, I develop research on the mechanisms of cultural soft power in Japan&ndash;Europe cooperation. This work connects institutional communication practice with a broader inquiry into how cultural industries operate as instruments of influence.</p>
-          <a href="https://www.softpower.school" target="_blank" rel="noopener" class="research-link">softpower.school&nbsp;&rarr;</a>
-        </div>
-        <div class="research-meta">
-          <p class="research-field">Field</p>
-          <p class="research-field-value">Cultural Industries &middot; Soft Power &middot; Japan&ndash;Europe</p>
-          <p class="research-field" style="margin-top:16px">Practice</p>
-          <p class="research-field-value">Research through Design</p>
-        </div>
-      </div>
-    </section>
-
-    <hr class="section-divider">
-
-    <!-- Work accordion -->
-    <section class="mx-auto max-w-[860px] w-full px-[clamp(20px,5vw,40px)] pt-[clamp(40px,6vw,64px)] pb-[clamp(56px,8vw,96px)]">
-      <p class="section-label"><span class="section-symbol">&sect;</span> 03&nbsp;&nbsp;Projects and initiatives</p>
-      <div class="cases-list">
-        <div class="cases-header">
-          <span>Institution</span>
-          <span>Sector</span>
-          <span>Country</span>
-          <span>Services</span>
-        </div>
-        {items.map((c) => (
-          <div class="cases-item">
-            <button class="cases-trigger" aria-expanded="false">
-              <span class="case-name">{c.name}</span>
-              <span class="case-sector">{c.sector}</span>
-              <span class="case-country">{c.country}</span>
-              <span class="case-services">{c.services} <span class="case-chevron">+</span></span>
-            </button>
-            <div class="cases-panel">
-              <p>{c.desc}</p>
-            </div>
+    <!-- §01 What I do -->
+    <section class="wrap" style="padding-top:clamp(24px,4vw,40px);padding-bottom:clamp(48px,7vw,56px);border-bottom:1px solid #E5E5E5">
+      <p class="sec-label">§ 01 What I do</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:clamp(28px,4vw,40px);margin-bottom:clamp(40px,6vw,56px)">
+        {services.map(s => (
+          <div style={`border-top:4px solid ${s.color};padding-top:20px`}>
+            <h3 style="font-family:'Inter',sans-serif;font-weight:600;font-size:18px;line-height:1.3;color:#111111;margin:0 0 12px">{s.title}</h3>
+            <p style="font-family:'Inter',sans-serif;font-size:15px;line-height:1.7;color:#767676;margin:0">{s.desc}</p>
           </div>
         ))}
       </div>
+      <svg viewBox="0 0 700 380" width="100%" style="display:block;max-width:600px;margin:0 auto;overflow:visible">
+        <circle cx="230" cy="150" r="105" fill="#8B1A4A" opacity="0.5"/>
+        <circle cx="430" cy="150" r="105" fill="#C8102E" opacity="0.5"/>
+        <circle cx="330" cy="255" r="105" fill="#1A2B4A" opacity="0.5"/>
+        <text x="130" y="34" font-family="Inter,sans-serif" font-size="14" font-weight="600" fill="#111">Cultural Industries Strategy</text>
+        <text x="500" y="34" text-anchor="end" font-family="Inter,sans-serif" font-size="14" font-weight="600" fill="#111">Digital Communication</text>
+        <text x="500" y="52" text-anchor="end" font-family="Inter,sans-serif" font-size="14" font-weight="600" fill="#111">&amp; Platforms</text>
+        <text x="330" y="356" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="600" fill="#111">Design Research &amp; Methodology</text>
+        <text x="330" y="180" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#fff">Design</text>
+      </svg>
+    </section>
+
+    <!-- §02 Research & Practice (black) -->
+    <section style="background:#0A0A0A;padding:clamp(48px,7vw,64px) 0">
+      <div class="wrap">
+        <p class="sec-label white">§ 02 Research &amp; Practice</p>
+        <div style="display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,56px);align-items:center">
+          <div style="flex:1 1 380px;min-width:260px">
+            <p style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(22px,3vw,28px);line-height:1.55;color:#fff;margin:0 0 26px;max-width:44ch">
+              Beyond consulting, I develop research on the mechanisms of cultural soft power in international cooperation. This work connects institutional communication practice with a broader inquiry into how cultural industries operate as instruments of influence.
+            </p>
+            <div style="display:flex;gap:clamp(24px,4vw,48px);flex-wrap:wrap">
+              <div>
+                <p style="font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#8A8A85;margin:0 0 8px">Field</p>
+                <p style="font-family:'Inter',sans-serif;font-size:15px;color:#fff;margin:0">Cultural Industries &middot; Soft Power &middot; Cross-cultural Communication</p>
+              </div>
+              <div>
+                <p style="font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#8A8A85;margin:0 0 8px">Practice</p>
+                <p style="font-family:'Inter',sans-serif;font-size:15px;color:#fff;margin:0">Research through Design</p>
+              </div>
+            </div>
+          </div>
+          <div style="flex:0 1 260px;min-width:220px">
+            <svg viewBox="0 0 380 320" width="100%" style="display:block;overflow:visible">
+              <circle cx="190" cy="160" r="95" fill="none" stroke="#2A2A2A" stroke-width="1.5"/>
+              <path d="M190 65 A95 95 0 0 1 285 160" fill="none" stroke="#C8102E" stroke-width="2.5"/>
+              <path d="M285 160 A95 95 0 0 1 190 255" fill="none" stroke="#E8A020" stroke-width="2.5"/>
+              <path d="M190 255 A95 95 0 0 1 95 160" fill="none" stroke="#2D6A4F" stroke-width="2.5"/>
+              <path d="M95 160 A95 95 0 0 1 190 65" fill="none" stroke="#8B1A4A" stroke-width="2.5"/>
+              <circle cx="190" cy="65" r="6" fill="#C8102E"/>
+              <circle cx="285" cy="160" r="6" fill="#E8A020"/>
+              <circle cx="190" cy="255" r="6" fill="#2D6A4F"/>
+              <circle cx="95" cy="160" r="6" fill="#8B1A4A"/>
+              <text x="190" y="44" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#fff">RESEARCH</text>
+              <text x="190" y="57" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.6)">Formulating the question</text>
+              <text x="305" y="153" text-anchor="start" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#fff">INSIGHT</text>
+              <text x="305" y="166" text-anchor="start" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.6)">Finding meaning</text>
+              <text x="190" y="280" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#fff">PRACTICE</text>
+              <text x="190" y="293" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.6)">Applying through design</text>
+              <text x="75" y="153" text-anchor="end" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#fff">OBSERVATION</text>
+              <text x="75" y="166" text-anchor="end" font-family="Inter,sans-serif" font-size="9" fill="rgba(255,255,255,0.6)">Gathering evidence</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- §03 Projects accordion -->
+    <section class="wrap" style="padding-top:clamp(48px,7vw,64px);padding-bottom:clamp(64px,9vw,88px)">
+      <p class="sec-label">§ 03 Projects &amp; initiatives</p>
+      <div style="display:grid;grid-template-columns:2fr 1.3fr 1fr 1.6fr;gap:0;padding:0 0 12px;border-bottom:1px solid #111111">
+        {['Institution','Sector','Country','Services'].map(h => (
+          <span style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#767676">{h}</span>
+        ))}
+      </div>
+      {projects.map((p, i) => (
+        <div class="proj-item" style="border-bottom:1px solid #E5E5E5">
+          <div class="proj-row" data-index={i}
+            style="display:grid;grid-template-columns:2fr 1.3fr 1fr 1.6fr;gap:0;padding:16px 0;cursor:pointer;align-items:center">
+            <span style="font-family:'Inter',sans-serif;font-size:15px;font-weight:500;color:#111111">{p.name}</span>
+            <span style="font-family:'Inter',sans-serif;font-size:14px;color:#767676">{p.sector}</span>
+            <span style="font-family:'Inter',sans-serif;font-size:14px;color:#767676">{p.country}</span>
+            <span style="font-family:'Inter',sans-serif;font-size:14px;color:#767676;display:flex;align-items:center;justify-content:space-between;gap:6px">
+              {p.services}<span class="proj-arrow">&darr;</span>
+            </span>
+          </div>
+          <div class="proj-panel" style="padding-bottom:16px">
+            <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.7;color:#111111;margin:0;max-width:68ch">{p.description}</p>
+          </div>
+        </div>
+      ))}
     </section>
 
   </main>
@@ -154,24 +134,11 @@ const items = [
 </BaseLayout>
 
 <script>
-  import { initCasesAnimation, initHoverPolish } from '../scripts/scroll-animations';
-  initCasesAnimation();
-  initHoverPolish();
-
-  document.querySelectorAll<HTMLButtonElement>('.cases-trigger').forEach((trigger) => {
-    trigger.addEventListener('click', () => {
-      const item = trigger.closest('.cases-item');
-      const isOpen = item?.classList.contains('is-open');
-
-      document.querySelectorAll('.cases-item').forEach((el) => {
-        el.classList.remove('is-open');
-        el.querySelector('.cases-trigger')?.setAttribute('aria-expanded', 'false');
-      });
-
-      if (!isOpen && item) {
-        item.classList.add('is-open');
-        trigger.setAttribute('aria-expanded', 'true');
-      }
+  document.querySelectorAll('.proj-row').forEach(row => {
+    row.addEventListener('click', () => {
+      const isOpen = row.classList.contains('open');
+      document.querySelectorAll('.proj-row.open').forEach(r => r.classList.remove('open'));
+      if (!isOpen) row.classList.add('open');
     });
   });
 </script>

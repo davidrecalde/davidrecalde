@@ -1,0 +1,67 @@
+---
+const navItems = [
+  { label: 'About', href: '/about/' },
+  { label: 'Work', href: '/work/' },
+  { label: 'Essays', href: '/essays/' },
+  { label: 'Contact', href: '/contact/' },
+];
+const currentPath = Astro.url.pathname;
+---
+<nav style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.92);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid #E5E5E5">
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;height:68px">
+    <a href="/" style="display:flex;align-items:center;gap:11px;text-decoration:none">
+      <span style="width:28px;height:28px;background:#0A0A0A;color:#fff;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">DR</span>
+      <span style="font-family:'Inter',sans-serif;font-size:16px;white-space:nowrap">
+        <span style="font-weight:300;color:#111111">David</span>
+        <span style="display:inline-block;width:7px"></span>
+        <span style="font-weight:700;color:#111111">Recalde</span>
+      </span>
+    </a>
+    <div class="desktop-nav" style="display:flex;gap:28px;align-items:center">
+      {navItems.map(item => (
+        <a href={item.href} class="nav-link"
+          style={`font-family:'Inter',sans-serif;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;font-weight:500;color:${currentPath.startsWith(item.href.replace(/\/$/, '')) && item.href !== '/' ? '#111111' : currentPath === '/' && item.href === '/' ? '#111111' : '#767676'}`}>
+          {item.label}
+        </a>
+      ))}
+    </div>
+    <button class="hamburger" aria-label="Open menu"
+      style="display:none;background:none;border:none;cursor:pointer;padding:10px 4px;flex-direction:column;gap:5px">
+      <span style="width:22px;height:1.5px;background:#111111;display:block"></span>
+      <span style="width:22px;height:1.5px;background:#111111;display:block"></span>
+    </button>
+  </div>
+</nav>
+
+<div id="mobile-menu" style="display:none;position:fixed;inset:0;z-index:100;background:#fff;flex-direction:column">
+  <div style="display:flex;align-items:center;justify-content:space-between;height:68px;padding:0 clamp(20px,5vw,32px);border-bottom:1px solid #E5E5E5">
+    <a href="/" style="display:flex;align-items:center;gap:11px">
+      <span style="width:28px;height:28px;background:#0A0A0A;color:#fff;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center">DR</span>
+      <span style="font-family:'Inter',sans-serif;font-size:16px">
+        <span style="font-weight:300">David</span>
+        <span style="display:inline-block;width:7px"></span>
+        <span style="font-weight:700">Recalde</span>
+      </span>
+    </a>
+    <button id="close-menu" style="background:none;border:none;cursor:pointer;font-size:30px;line-height:1;color:#111;font-weight:300">&times;</button>
+  </div>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:4px;padding:0 clamp(28px,8vw,32px)">
+    {navItems.map(item => (
+      <a href={item.href}
+        style="font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:400;color:#111111;text-decoration:none;line-height:1.35;border-bottom:1px solid #E5E5E5;padding:12px 0">
+        {item.label}
+      </a>
+    ))}
+  </div>
+</div>
+
+<script>
+  const ham = document.querySelector('.hamburger') as HTMLButtonElement;
+  const menu = document.getElementById('mobile-menu') as HTMLElement;
+  const close = document.getElementById('close-menu') as HTMLButtonElement;
+  ham?.addEventListener('click', () => { menu.style.display = 'flex'; });
+  close?.addEventListener('click', () => { menu.style.display = 'none'; });
+  document.querySelectorAll('#mobile-menu a').forEach(a => {
+    a.addEventListener('click', () => { menu.style.display = 'none'; });
+  });
+</script>
